@@ -1,0 +1,26 @@
+1.8.1 What is the Java source filename extension, and what is the Java bytecode filename
+extension?
+Source Filename extends is called .java and bytecode filename extends is .class
+
+1.8.2 What are the input and output of a Java compiler?
+Input of a java compiler is the source code and output is the bytecode
+
+1.8.3 What is the command to compile a Java program?
+javac 
+
+1.8.4 What is the command to run a Java program?
+java
+
+1.8.5 What is the JVM?
+Java Virtual Machine
+
+1.8.6 Can Java run on any machine? What is needed to run Java on a computer?
+Installing the JDK
+
+1.8.7 If a NoClassDefFoundError occurs when you run a program, what is the cause
+of the error?
+Executing a class which doesnt exist
+
+1.8.8 If a NoSuchMethodError occurs when you run a program, what is the cause of the
+error?
+Main instead of main (case sensitive)
