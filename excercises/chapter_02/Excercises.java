@@ -6,7 +6,7 @@ public class Excercises {
     public static void main(String[] args) {
         Excercises excercises = new Excercises();
 
-        excercises.findNumberOfYears();
+        excercises.compoundValue();
     }
 
     /**
@@ -92,4 +92,24 @@ public class Excercises {
 
         System.out.println(minutes + " minutes is approximately " + years + " years and " + days + " days");
     }
+
+    /**
+     * 2.13
+     */
+    public void compoundValue() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the monthly saving amount: ");
+
+        final double monthlyInterestRate = 0.003125;
+        double savingAmount = input.nextDouble();
+        double accountValue = savingAmount;
+
+        for(int i = 1; i <= 6; i++) {
+            accountValue *= monthlyInterestRate + 1;
+            System.out.println("After the " + i + " month, the account value is " + accountValue);
+            accountValue += savingAmount;
+        }
+    }
+
+    
 }
