@@ -6,7 +6,7 @@ public class Excercises {
     public static void main(String[] args) {
         Excercises excercises = new Excercises();
 
-        excercises.compoundValue();
+        excercises.computingTemperature();
     }
 
     /**
@@ -111,9 +111,35 @@ public class Excercises {
         }
     }
 
-    public void test() {
-        
+    /**
+     * 2.14
+     */
+    public void computingBMI() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter weight in kilograms: ");
+        double weight = input.nextDouble();
+
+        System.out.print("Enter height in meters: ");
+        double height = input.nextDouble();
+
+        double BMI = weight / Math.pow(height, 2);
+        System.out.println("BMI is " + BMI);
     }
 
+    /**
+     * 2.17
+     */
+    public void computingTemperature() {
+        Scanner input = new Scanner(System.in);
 
+        System.out.print("Enter the temperature in Fahrenheit between - 58°F and 41°F: ");
+        double temperature = input.nextDouble();
+
+        System.out.print("Enter the wind speed (>= 2) in miles per hour: ");
+        double windSpeed = input.nextDouble();
+
+        double windChillIndex = 35.74 + (0.6215 * temperature) - 35.75 * Math.pow(windSpeed, 0.16) + 0.4275 * temperature * Math.pow(windSpeed, 0.16);
+        System.out.println("The wind chill index is: " + windChillIndex);
+    }
 }
