@@ -10,6 +10,9 @@ public class Test {
 
         // System.out.println(i);
 
-    
+        int ticketPrice;
+        int ages = 16;
+
+        ticketPrice = (ages >= 16) ? 20 : 10;
     }
 }
