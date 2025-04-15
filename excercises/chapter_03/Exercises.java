@@ -106,6 +106,28 @@ public class Exercises {
         }
     }
 
+    /**
+     * 3.14
+     */
+    public void headsOrTails() {
+        Scanner input = new Scanner(System.in);
+        double number = Math.random();
+        if(number > 0.5) {
+            number = 1;
+        } else {
+            number = 0;
+        }
+
+        System.out.print("Heads or Tails? (1 for heads, 0 for tails)");
+        int guess = input.nextInt();
+
+        if(guess == number) {
+            System.out.println("Right!");
+        } else {
+            System.out.println("Wrong!");
+        }
+    }
+
     
 
 
