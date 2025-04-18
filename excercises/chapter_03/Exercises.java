@@ -6,7 +6,7 @@ public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
 
-        exercises.palindromeChecker();
+        exercises.scissorRockPaper();
     }
 
     /**
@@ -128,8 +128,32 @@ public class Exercises {
         }
     }
 
-    
+    /**
+     * 3.15
+     */
+    public void scissorRockPaper() {
+        Scanner input = new Scanner(System.in);
+        double number = Math.random();
 
+        if(number < 0.33) {
+            number = 0;
+        } else if(number < 0.66) {
+            number = 1;
+        } else {
+            number = 2;
+        }
 
+        System.out.print("scissor (0), rock (1), paper (2): ");
+        int guess = input.nextInt();
 
+        if(guess == number) {
+            System.out.println("Draw");
+        } else if(guess == 1 && number == 2 || guess == 0 && number == 1) {
+            String temp = number == 1 ? "rock" : "paper";
+            System.out.println("Lost, PC has " + temp);
+        } else {
+            String temp = number == 1 ? "rock" : "paper";
+            System.out.println("Win, PC has " + temp);
+        }
+    }
 }
