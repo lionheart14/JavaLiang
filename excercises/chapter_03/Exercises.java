@@ -6,7 +6,7 @@ public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
 
-        exercises.scissorRockPaper();
+        exercises.calculatingCostOfShipping();
     }
 
     /**
@@ -154,6 +154,33 @@ public class Exercises {
         } else {
             String temp = number == 1 ? "rock" : "paper";
             System.out.println("Win, PC has " + temp);
+        }
+    }
+
+    /**
+     * 3.18
+     */
+    public void calculatingCostOfShipping() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter weight of package: ");
+        double weight = input.nextDouble();
+        double cost = 0;
+
+        if(weight <= 2.5) {
+            cost = 2.5;
+        } else if(weight <= 4) {
+            cost = 4.5;
+        } else if(weight <= 10) {
+            cost = 7.5;
+        } else if(weight <= 20) {
+            cost = 10.5;
+        }
+
+        if(weight > 20) {
+            System.out.println("The package cannot be shipped.");
+        } else {
+            System.out.println("The cost of package is " + cost);
         }
     }
 }
