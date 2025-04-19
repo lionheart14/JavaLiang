@@ -6,7 +6,7 @@ public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
 
-        exercises.calculatingCostOfShipping();
+        exercises.computingPerimeter();
     }
 
     /**
@@ -181,6 +181,28 @@ public class Exercises {
             System.out.println("The package cannot be shipped.");
         } else {
             System.out.println("The cost of package is " + cost);
+        }
+    }
+
+    /**
+     * 3.19
+     */
+    public void computingPerimeter() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter degrees for edge 1, edge 2 and edge 3: ");
+        int edgeOne = input.nextInt();
+        int edgeTwo = input.nextInt();
+        int edgeThree = input.nextInt();
+
+        // sums of edges
+        int sum1 = edgeOne + edgeTwo;
+        int sum2 = edgeOne + edgeThree;
+        int sum3 = edgeTwo + edgeThree;
+
+        if(sum1 > edgeThree || sum2 > edgeTwo || sum3 > edgeOne) {
+            System.out.println("Invalid");
+        } else {
+            System.out.println("Valid");
         }
     }
 }
