@@ -6,7 +6,7 @@ public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
 
-        exercises.computingPerimeter();
+        exercises.pointInCircle();
     }
 
     /**
@@ -203,6 +203,55 @@ public class Exercises {
             System.out.println("Invalid");
         } else {
             System.out.println("Valid");
+        }
+    }
+
+    /**
+     * 3.21
+     */
+    public void zellersCongruence() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter year: (e.g., 2012): ");
+        int year = input.nextInt();
+        int j = year / 100;
+        int k = year % 100;
+
+        System.out.print("Enter month: 1-12: ");
+        int m = input.nextInt() + 2;
+
+        System.out.println("Enter the day of the month: 1-31: ");
+        int q = input.nextInt();
+
+        int h = (q + (26 * (m + 1) / 10) + k + k / 4 + j / 4 + 5 * j) % 7;
+
+        String day = "fuckday";
+        switch(h) {
+            case 0: day = "Saturday"; break;
+            case 1: day = "Sunday"; break;
+            case 2: day = "Monday"; break;
+            case 3: day = "Tuesday"; break;
+            case 4: day = "Wednesday"; break;
+            case 5: day = "Thursday"; break;
+            case 6: day = "Friday"; break;
+        }
+
+        System.out.println("Day of the week is " + day);
+    }
+
+    /**
+     * 3.22
+     */
+    public void pointInCircle() {
+        Scanner input = new Scanner(System.in);
+        System.out.print ("Enter a point with two coordinates: ");
+        double p1 = input.nextDouble();
+        double p2 = input.nextDouble();
+
+        double distance = Math.pow((Math.pow(p2 - p1, 2)) - Math.pow(p2 - p1, 2), 0.5);
+        if(distance > 10) {
+            System.out.println("Point is not in the circle");
+        } else {
+            System.out.println("Point is in the circle");
         }
     }
 }
