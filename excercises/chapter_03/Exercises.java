@@ -311,4 +311,20 @@ public class Exercises {
         
         System.out.println("The card you picked is " + rank + " of " + suit);
     }
+
+    /**
+     * 3.25
+     */
+    public void intersectingPoint() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter four points: ");
+        int p1 = input.nextInt();
+        int p2 = input.nextInt();
+        int p3 = input.nextInt();
+        int p4 = input.nextInt();
+
+        //no motivation for implemetation
+    }
+
+    
 }
