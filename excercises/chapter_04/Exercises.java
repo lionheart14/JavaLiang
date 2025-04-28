@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.areaOfPolygon();
+        exercises.asciiCode();
     }
     /** 
      * 4.1
@@ -57,5 +57,27 @@ public class Exercises {
         System.out.printf("The area of the polygon is %.2f", area);
     }
 
-    
+    /**
+     * 4.6
+     */
+    public void randomPointsOnCircle() {
+        final int RADIUS = 40;
+        double alpha = Math.toRadians((int) (Math.random() * 360));
+        double x = RADIUS * Math.cos(alpha);
+        double y = RADIUS * Math.sin(alpha);
+    }
+
+    /**
+     * 4.8
+     */
+    public void asciiCode() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a character: ");
+        char c = input.nextLine().charAt(0);
+        int ascii = (int) c;
+
+        System.out.printf("The ASCII code for character %c is %d", c , ascii);
+    }
+
+
 }
