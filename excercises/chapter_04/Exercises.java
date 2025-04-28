@@ -65,6 +65,11 @@ public class Exercises {
         double alpha = Math.toRadians((int) (Math.random() * 360));
         double x = RADIUS * Math.cos(alpha);
         double y = RADIUS * Math.sin(alpha);
+        double bravo = Math.toRadians((int) (Math.random() * 360));
+
+        double charlie = Math.toRadians((int) (Math.random() * 360));
+
+
     }
 
     /**
