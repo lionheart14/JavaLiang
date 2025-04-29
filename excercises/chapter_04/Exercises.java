@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.binaryToDecimal();
+        exercises.hexToBinary();
     }
     /** 
      * 4.1
@@ -112,5 +112,25 @@ public class Exercises {
         System.out.printf("The decimal value is %d", decimal);
     }
 
-    
+    /**
+     * 4.12
+     */
+    public void hexToBinary() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the hex digit: ");
+        char c = input.nextLine().charAt(0);
+
+        //Konvertieren des Hex codes in decimal
+        int decimal = Character.digit(c, 16);
+
+        if(decimal == -1) {
+            System.out.printf("%c is an inavalid input", c);
+            return;
+        }
+        
+        //Konvertieren der Dezimalzahl in Binary
+        String binary = Integer.toBinaryString(decimal);
+
+        System.out.printf("The binary value is %s", binary);
+    }
 }
