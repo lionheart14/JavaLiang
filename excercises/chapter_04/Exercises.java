@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.vowelOrConsonant();
+        exercises.convertLetterToNumber();
     }
     /** 
      * 4.1
@@ -153,5 +153,30 @@ public class Exercises {
         } else {
             System.out.printf("%s is a consonant", c);
         }
+    }
+
+    /**
+     * 4.14
+     */
+    public void convertLetterToNumber() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a letter grade: ");
+        char c = input.nextLine().charAt(0);
+        int numeric = -1;
+
+        switch(c) {
+            case 'A': numeric = 4; break;
+            case 'B': numeric = 3; break;
+            case 'C': numeric = 2; break;
+            case 'D': numeric = 1; break;
+            case 'F': numeric = 0; break;
+        }
+
+        if(numeric == -1) {
+            System.out.println("%c is an invalid grade");
+            return;
+        }
+
+        System.out.printf("The numeric value for grade B is %d", numeric);
     }
 }
