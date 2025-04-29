@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.asciiCode();
+        exercises.binaryToDecimal();
     }
     /** 
      * 4.1
@@ -68,12 +68,10 @@ public class Exercises {
         double bravo = Math.toRadians((int) (Math.random() * 360));
 
         double charlie = Math.toRadians((int) (Math.random() * 360));
-
-
     }
 
     /**
-     * 4.8
+     * 4.8, 4.9
      */
     public void asciiCode() {
         Scanner input = new Scanner(System.in);
@@ -84,5 +82,35 @@ public class Exercises {
         System.out.printf("The ASCII code for character %c is %d", c , ascii);
     }
 
+    /**
+     * 4.11
+     */
+    public void binaryToDecimal() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter binary digits (0000 to 1111): ");
+        String binary = input.nextLine();
 
+        char firstDigit = binary.charAt(0);
+        char secondDigit = binary.charAt(1);
+        char thirdDigit = binary.charAt(2);
+        char fourthDigit = binary.charAt(3);
+
+        int decimal = 0;
+        if(firstDigit == '1') {
+            decimal += 8;
+        }
+        if(secondDigit == '1') {
+            decimal += 4;
+        }
+        if(thirdDigit == '1') {
+            decimal += 2;
+        }
+        if(fourthDigit == '1') {
+            decimal += 1;
+        }
+
+        System.out.printf("The decimal value is %d", decimal);
+    }
+
+    
 }
