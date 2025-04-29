@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.hexToBinary();
+        exercises.vowelOrConsonant();
     }
     /** 
      * 4.1
@@ -127,10 +127,31 @@ public class Exercises {
             System.out.printf("%c is an inavalid input", c);
             return;
         }
-        
+
         //Konvertieren der Dezimalzahl in Binary
         String binary = Integer.toBinaryString(decimal);
 
         System.out.printf("The binary value is %s", binary);
+    }
+
+    /**
+     * 4.13
+     */
+    public void vowelOrConsonant() {
+        Scanner input = new Scanner(System.in);
+        String vowels = "aeiou";
+        System.out.print("Enter a letter: ");
+        String c = input.nextLine();
+
+        if(c.length() > 1) {
+            System.out.println("You can only enter one letter");
+            return;
+        }
+
+        if(vowels.contains(c)) {
+            System.out.printf("%s is a vowel", c);
+        } else {
+            System.out.printf("%s is a consonant", c);
+        }
     }
 }
