@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.randomCharacter();
+        exercises.daysOfMonth();
     }
     /** 
      * 4.1
@@ -226,5 +226,35 @@ public class Exercises {
     public void randomCharacter() {
         int ascii = (int) (Math.random() * 25 + 97);
         System.out.printf("Random letter: %c", ascii);
+    }
+
+    /**
+     * 4.17
+     */
+    public void daysOfMonth() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a month: ");
+        String month = input.nextLine();
+        System.out.print("Enter a year: ");
+        int year = input.nextInt();
+
+        int days = -1;
+        switch(month) {
+            case "Jan": days = 31; break;
+            case "Feb": days = 29; if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0) days = 28; break;
+            case "Mar": days = 31; break;
+            case "Apr": days = 30; break;
+            case "May": days = 31; break;
+            case "Jun": days = 30; break;
+            case "Jul": days = 31; break;
+            case "Aug": days = 31; break;
+            case "Sep": days = 30; break;
+            case "Oct": days = 31; break;
+            case "Nov": days = 30; break;
+            case "Dec": days = 31; break;
+            default: System.out.printf("%s is not a correct month name", month); return;
+        }
+
+        System.out.printf("%d %s has %d days", year, month, days);
     }
 }
