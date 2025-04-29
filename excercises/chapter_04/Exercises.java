@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.convertLetterToNumber();
+        exercises.phoneKeyPads();
     }
     /** 
      * 4.1
@@ -178,5 +178,45 @@ public class Exercises {
         }
 
         System.out.printf("The numeric value for grade B is %d", numeric);
+    }
+
+    /**
+     * 4.15
+     */
+    public void phoneKeyPads() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a letter: ");
+        char c = input.nextLine().toLowerCase().charAt(0);
+        int number = -1;
+
+        if(c < 97 || c > 122) {
+            System.out.printf("%c is an invalid input", c);
+            return;
+        }
+
+        if(c >= 119) {
+            number = 9;
+        } else if(c >= 116) {
+            number = 8;
+        } else if(c >= 112) {
+            number = 7;
+        } else if(c >= 109) {
+            number = 6;
+        } else if(c >= 106) {
+            number = 5;
+        } else if(c >= 103) {
+            number = 4;
+        } else if(c >= 100) {
+            number = 3;
+        } else {
+            number = 2;
+        }
+
+        if(number == -1) {
+            System.out.println("Error");
+            return;
+        }
+
+        System.out.printf("The corresponding number is %d", number);
     }
 }
