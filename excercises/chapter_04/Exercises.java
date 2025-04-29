@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.phoneKeyPads();
+        exercises.randomCharacter();
     }
     /** 
      * 4.1
@@ -218,5 +218,13 @@ public class Exercises {
         }
 
         System.out.printf("The corresponding number is %d", number);
+    }
+
+    /**
+     * 4.16
+     */
+    public void randomCharacter() {
+        int ascii = (int) (Math.random() * 25 + 97);
+        System.out.printf("Random letter: %c", ascii);
     }
 }
