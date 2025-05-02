@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.daysOfMonth();
+        exercises.studentStatus();
     }
     /** 
      * 4.1
@@ -256,5 +256,33 @@ public class Exercises {
         }
 
         System.out.printf("%d %s has %d days", year, month, days);
+    }
+
+    /**
+     * 4.18
+     */
+    public void studentStatus() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter two characters: ");
+        String user = input.nextLine();
+
+        char majorInd = user.charAt(0);
+        char statusInd = user.charAt(1);
+        String major = "";
+        String status = "";
+
+        switch(majorInd) {
+            case 'I': major = "Information Management"; break;
+            case 'C': major = "Computer Science"; break;
+            case 'A': major = "Accounting"; break;
+        }
+
+        switch(statusInd) {
+            case '1': status = "Freshman"; break;
+            case '2': status = "Sophomore"; break;
+            case '3': status = "Junior"; break;
+            case '4': status = "Senior"; break;
+        }
+        System.out.printf("%s %s", major, status);
     }
 }
