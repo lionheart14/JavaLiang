@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.studentStatus();
+        exercises.checkSSN();
     }
     /** 
      * 4.1
@@ -275,6 +275,7 @@ public class Exercises {
             case 'I': major = "Information Management"; break;
             case 'C': major = "Computer Science"; break;
             case 'A': major = "Accounting"; break;
+            default: System.out.println("Invalid input"); return;
         }
 
         switch(statusInd) {
@@ -282,7 +283,59 @@ public class Exercises {
             case '2': status = "Sophomore"; break;
             case '3': status = "Junior"; break;
             case '4': status = "Senior"; break;
+            default: System.out.println("Invalid input"); return;
         }
         System.out.printf("%s %s", major, status);
+    }
+
+    /**
+     * 4.20 
+     */
+    public void processString() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = input.nextLine();
+        int length = string.length();
+
+        System.out.printf("Length: %d \nLast character: %c", length, string.charAt(length - 1));
+    }
+
+    /**
+     * 4.21
+     */
+    public void checkSSN() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a SSN: ");
+        String SSN = input.nextLine();
+
+        if(SSN.length() != 11) {
+            System.out.printf("%s is an invalid social security number", SSN);
+        }
+
+        char D1 = SSN.charAt(0);
+        char D2 = SSN.charAt(1);
+        char D3 = SSN.charAt(2);
+        char S1 = SSN.charAt(3);
+        char D4 = SSN.charAt(4);
+        char D5 = SSN.charAt(5);
+        char S2 = SSN.charAt(6);
+        char D6 = SSN.charAt(7);
+        char D7 = SSN.charAt(8);
+        char D8 = SSN.charAt(9);
+        char D9 = SSN.charAt(10);
+
+
+        if(Character.isDigit(D1) && Character.isDigit(D2) && Character.isDigit(D3) &&
+        S1 == '-' &&
+        Character.isDigit(D4) && Character.isDigit(D5) &&
+        S2 == '-' &&
+        Character.isDigit(D6) && Character.isDigit(D7) &&
+        Character.isDigit(D8) && Character.isDigit(D9)) {
+            System.out.printf("%s is an valid social security number", SSN);
+            return;
+        }
+
+        System.out.printf("%s is an invalid social security number", SSN);
+
     }
 }
