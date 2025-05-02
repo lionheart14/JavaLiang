@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.checkSubstring();
+        exercises.showPayroll();
     }
     /** 
      * 4.1
@@ -350,5 +350,31 @@ public class Exercises {
         } else {
             System.out.printf("%s is not a substring of %s", s2, s1);
         }
+    }
+
+    public void showPayroll() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter employee's name: ");
+        String name = input.nextLine();
+        System.out.print("Enter number of hours worked in a week: ");
+        double hoursWorked = input.nextDouble();
+        System.out.print("Enter hourly pay rate: ");
+        double hourlyPayRate = input.nextDouble();
+        System.out.print("Enter federal tax withholding rate: ");
+        double federalTax = input.nextDouble();
+        System.out.print("Enter state tax withholding rate: ");
+        double stateTax = input.nextDouble();
+
+        double grossPay = hoursWorked * hourlyPayRate;
+        double federalWithholding = grossPay * federalTax;
+        double stateWithholding = grossPay * stateTax;
+        double totalDeduction = federalWithholding + stateWithholding;
+        double netPay = grossPay - totalDeduction;
+
+        double federalTaxPercent = federalTax * 100;
+        double stateTaxPercent = stateTax * 100;
+
+
+        System.out.printf("Employee Name: %s\n Hours Worked: %f\nPay Rate: $%f\nGross Pay: $%f\nDeductions:\n   Federal Withholding (%f%%): $%f\n   State Withholding (%f%%): $%f\n   Total Deduction: $%f\nNet Pay: $%f", name, hoursWorked, hourlyPayRate, grossPay, federalTaxPercent, federalWithholding, stateTaxPercent, stateWithholding, totalDeduction, netPay);
     }
 }
