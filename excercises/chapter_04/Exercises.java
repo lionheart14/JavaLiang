@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.checkSSN();
+        exercises.checkSubstring();
     }
     /** 
      * 4.1
@@ -305,7 +305,7 @@ public class Exercises {
      */
     public void checkSSN() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter a SSN: ");
+        System.out.print("Enter a SSN: ");
         String SSN = input.nextLine();
 
         if(SSN.length() != 11) {
@@ -336,6 +336,19 @@ public class Exercises {
         }
 
         System.out.printf("%s is an invalid social security number", SSN);
+    }
 
+    public void checkSubstring() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter string s1: ");
+        String s1 = input.nextLine();
+        System.out.print("Enter string s2: ");
+        String s2 = input.nextLine();
+
+        if(s1.contains(s2)) {
+            System.out.printf("%s is a substring of %s", s2, s1);
+        } else {
+            System.out.printf("%s is not a substring of %s", s2, s1);
+        }
     }
 }
