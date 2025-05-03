@@ -420,4 +420,10 @@ public class Exercises {
         System.out.printf("The three countries in ascending order are %s %s %s", firstCountry, secondCountry, thirdCountry);
     }
     
+    /**
+     * 4.25
+     */
+    public void generateVehiclePlateNumbers() {
+        
+    }
 }
