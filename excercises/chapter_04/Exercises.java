@@ -338,6 +338,9 @@ public class Exercises {
         System.out.printf("%s is an invalid social security number", SSN);
     }
 
+    /**
+     * 4.22
+     */
     public void checkSubstring() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter string s1: ");
@@ -352,6 +355,9 @@ public class Exercises {
         }
     }
 
+    /**
+     * 4.23
+     */
     public void showPayroll() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter employee's name: ");
@@ -377,4 +383,6 @@ public class Exercises {
 
         System.out.printf("Employee Name: %s\n Hours Worked: %f\nPay Rate: $%f\nGross Pay: $%f\nDeductions:\n   Federal Withholding (%f%%): $%f\n   State Withholding (%f%%): $%f\n   Total Deduction: $%f\nNet Pay: $%f", name, hoursWorked, hourlyPayRate, grossPay, federalTaxPercent, federalWithholding, stateTaxPercent, stateWithholding, totalDeduction, netPay);
     }
+
+    
 }
