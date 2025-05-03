@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.showPayroll();
+        exercises.enterThreeCountries();
     }
     /** 
      * 4.1
@@ -384,5 +384,40 @@ public class Exercises {
         System.out.printf("Employee Name: %s\n Hours Worked: %f\nPay Rate: $%f\nGross Pay: $%f\nDeductions:\n   Federal Withholding (%f%%): $%f\n   State Withholding (%f%%): $%f\n   Total Deduction: $%f\nNet Pay: $%f", name, hoursWorked, hourlyPayRate, grossPay, federalTaxPercent, federalWithholding, stateTaxPercent, stateWithholding, totalDeduction, netPay);
     }
 
+    /**
+     * 4.24
+     */
+    public void enterThreeCountries() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the first country: ");
+        String firstCountry = input.nextLine();
+
+        System.out.print("Enter the second country: ");
+        String secondCountry = input.nextLine();
+
+        System.out.print("Enter the third country: ");
+        String thirdCountry = input.nextLine();
+        String temp;
+
+        if(firstCountry.compareTo(secondCountry) > 0) {
+            temp = firstCountry;
+            firstCountry = secondCountry;
+            secondCountry = temp;
+        }  
+
+        if(firstCountry.compareTo(thirdCountry) > 0) {
+            temp = firstCountry;
+            firstCountry = thirdCountry;
+            thirdCountry = temp;
+        }
+
+        if(secondCountry.compareTo(thirdCountry) > 0) {
+            temp = secondCountry;
+            secondCountry = thirdCountry;
+            thirdCountry = temp;
+        }
+
+        System.out.printf("The three countries in ascending order are %s %s %s", firstCountry, secondCountry, thirdCountry);
+    }
     
 }
