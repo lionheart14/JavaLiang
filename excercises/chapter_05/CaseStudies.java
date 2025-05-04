@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CaseStudies {
     public static void main(String[] args) {
         CaseStudies cd = new CaseStudies();
-        cd.doWhile();
+        cd.greatestCommonDivisor();
     }
 
     public void guessingNumbers() {
@@ -56,5 +56,26 @@ public class CaseStudies {
             number = input.nextInt();
             sum += number;
         } while(number != 0);
+    }
+
+    public void greatestCommonDivisor() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number 1: ");
+        int n1 = input.nextInt();
+        System.out.print("Enter number 2: ");
+        int n2 = input.nextInt();
+
+        int gcd = 1;
+        int k = 2;
+
+        while(k <= n1 && k <= n2) {
+            if(n1 % k == 0 && n2 % k == 0) {
+                gcd = k;
+            }
+            k++;
+        }
+
+        System.out.printf("The greatest commmon divisor for %d and %d is %d", n1, n2, gcd);
+        
     }
 }
