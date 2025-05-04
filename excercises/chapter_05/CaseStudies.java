@@ -45,4 +45,16 @@ public class CaseStudies {
         System.out.println("max is " + max);
         System.out.println("number " + number); 
     }
+
+    public void rewriteWhile() {
+        Scanner input = new Scanner(System.in);
+        int sum = 0;
+        int number;
+
+        do {
+            System.out.println("Enter an integer (the input ends if it is 0)");
+            number = input.nextInt();
+            sum += number;
+        } while(number != 0);
+    }
 }
