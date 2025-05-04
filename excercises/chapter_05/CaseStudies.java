@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CaseStudies {
     public static void main(String[] args) {
         CaseStudies cd = new CaseStudies();
-        cd.guessingNumbers();
+        cd.doWhile();
     }
 
     public void guessingNumbers() {
@@ -28,5 +28,21 @@ public class CaseStudies {
         }
 
         System.out.printf("Yes, the number is %d", number);
+    }
+
+    public void doWhile() {
+        Scanner input = new Scanner(System.in);
+        int number, max;
+        System.out.print("Enter: ");
+        number = input.nextInt(); 
+        max = number;
+        do {
+            System.out.print("Enter: ");
+            number = input.nextInt();
+            if (number > max)
+                max = number;
+        } while (number != 0);
+        System.out.println("max is " + max);
+        System.out.println("number " + number); 
     }
 }
