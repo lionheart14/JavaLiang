@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CaseStudies {
     public static void main(String[] args) {
         CaseStudies cd = new CaseStudies();
-        cd.greatestCommonDivisor();
+        cd.futureTuition();
     }
 
     public void guessingNumbers() {
@@ -76,6 +76,18 @@ public class CaseStudies {
         }
 
         System.out.printf("The greatest commmon divisor for %d and %d is %d", n1, n2, gcd);
-        
+    }
+
+    public void futureTuition() {
+        double tuition = 10000;
+        double increment = 1.07;
+        int year = 0;
+
+        while(tuition < 20000) {
+            tuition *= increment;
+            year++;
+        }
+
+        System.out.printf("The tuition needs %d years to double", year);
     }
 }
