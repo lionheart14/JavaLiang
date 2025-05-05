@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CaseStudies {
     public static void main(String[] args) {
         CaseStudies cd = new CaseStudies();
-        cd.convertingDecimalsToHexadecimals();
+        cd.checkingPalindromes();
     }
 
     public void guessingNumbers() {
@@ -105,5 +105,25 @@ public class CaseStudies {
         }
 
         System.out.printf("The hexadecimal %s", hexadecimal);
+    }
+
+    public void checkingPalindromes() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String word = input.nextLine();
+
+        if(word.length() % 2 == 0) {
+            System.out.printf("%s is not a palindrome", word);
+            return;
+        }
+
+        for(int i = 0; i < (word.length() - 1) / 2; i++) {
+            if(word.charAt(i) != word.charAt(word.length() - i - 1)) {
+                System.out.printf("%s is not a palindrome", word);
+                return;
+            }
+        }
+
+        System.out.printf("%s is a palindrome", word);
     }
 }
