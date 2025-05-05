@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CaseStudies {
     public static void main(String[] args) {
         CaseStudies cd = new CaseStudies();
-        cd.checkingPalindromes();
+        cd.displayingPrimeNumbers();
     }
 
     public void guessingNumbers() {
@@ -125,5 +125,31 @@ public class CaseStudies {
         }
 
         System.out.printf("%s is a palindrome", word);
+    }
+
+    public void displayingPrimeNumbers() {
+        final int NUMBER_OF_PRIMES = 50;
+        int number = 2;
+        int count = 0;
+        boolean isPrime = true;
+
+        while(count < NUMBER_OF_PRIMES) {
+            for(int i = 2; i <= number / 2; i++) {
+                if(number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if(isPrime) {
+                count++;
+                if(count % 10 == 0) {
+                    System.out.println(number);
+                } else {
+                    System.out.printf("%-5d", number);
+                }
+            }
+            number++;
+        }
     }
 }
