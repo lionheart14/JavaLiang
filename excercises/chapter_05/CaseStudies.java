@@ -127,6 +127,9 @@ public class CaseStudies {
         System.out.printf("%s is a palindrome", word);
     }
 
+    /**
+     * 5.15 unfinished
+     */
     public void displayingPrimeNumbers() {
         final int NUMBER_OF_PRIMES = 50;
         int number = 2;
