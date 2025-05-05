@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CaseStudies {
     public static void main(String[] args) {
         CaseStudies cd = new CaseStudies();
-        cd.futureTuition();
+        cd.convertingDecimalsToHexadecimals();
     }
 
     public void guessingNumbers() {
@@ -89,5 +89,21 @@ public class CaseStudies {
         }
 
         System.out.printf("The tuition needs %d years to double", year);
+    }
+
+    public void convertingDecimalsToHexadecimals() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        int number = input.nextInt();
+
+        String hexadecimal = "";
+        while(number != 0) {
+            int hexValue = number % 16;
+            char hexDigit = (hexValue >= 0 && hexValue <= 9) ? (char) (hexValue + '0'): (char) (hexValue - 10 + 'A');
+            hexadecimal = hexDigit + hexadecimal;
+            number /= 16;
+        }
+
+        System.out.printf("The hexadecimal %s", hexadecimal);
     }
 }
