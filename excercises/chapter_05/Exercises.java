@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.celsiusToFahrenheitTable();
+        exercises.squareMeterToPing();
     }
 
     /**
@@ -71,5 +71,19 @@ public class Exercises {
             System.out.printf("%-12d %12.3f   |   %-12d %12.3f\n", celsius1, fahrenheit1, fahrenheit2, celsius2);
             fahrenheit2 += 5;
         }
-    }  
+    }
+
+    /**
+     * 5.6
+     */
+    public void squareMeterToPing() {
+        System.out.printf("%-12s %12s   |   %-12s %12s\n", "Ping", "Square meter", "Square meter", "Ping");
+        int squareMeter2 = 30;
+        for(int ping = 10; ping <= 80; ping += 5) {
+            double squareMeter1 = ping * 3.305;
+            double ping2 = squareMeter2 / 3.305;
+            System.out.printf("%-12d %12.3f   |   %-12d %12.3f\n", ping, squareMeter1, squareMeter2, ping2);
+            squareMeter2 += 5;
+        }
+    }
 }
