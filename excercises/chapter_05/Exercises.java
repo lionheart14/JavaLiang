@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
+        exercises.celsiusToFahrenheit();
     }
 
     /**
@@ -28,6 +29,18 @@ public class Exercises {
             } else {
                 System.out.println("You don't pass the exam");
             }
+        }
+    }
+
+    /**
+     * 5.3
+     */
+    public void celsiusToFahrenheit() {
+        System.out.printf("%-10s %10s\n", "Celsius", "Fahrenheit");
+        for(int i = 0; i <= 100; i += 2) {
+            int celsius = i;
+            double fahrenheit = celsius * 9/5 + 32;
+            System.out.printf("%-10d %10.1f\n", celsius, fahrenheit);
         }
     }
 }
