@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.inchToCentimeter();
+        exercises.celsiusToFahrenheitTable();
     }
 
     /**
@@ -55,4 +55,21 @@ public class Exercises {
             System.out.printf("%-10d %.2f\n", inch, centimetres);
         }
     }
+
+    /**
+     * 5.5 
+     */ 
+    public void celsiusToFahrenheitTable() {
+        System.out.printf("%-12s %12s   |   %-12s %12s\n", "Celsius", "Fahrenheit", "Fahrenheit", "Celsius");
+
+        int fahrenheit2 = 20;
+        for(int i = 0; i <= 100; i += 2) {
+            int celsius1 = i;
+            double fahrenheit1 = celsius1 * (9/5) + 32; 
+
+            double celsius2 = (fahrenheit2 - 32) * (5/9.0);
+            System.out.printf("%-12d %12.3f   |   %-12d %12.3f\n", celsius1, fahrenheit1, fahrenheit2, celsius2);
+            fahrenheit2 += 5;
+        }
+    }  
 }
