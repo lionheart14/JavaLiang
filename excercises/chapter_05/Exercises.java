@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.findHighestScore();
+        exercises.findTwoLowestScores();
     }
 
     /**
@@ -109,7 +109,7 @@ public class Exercises {
         int numberOfStudents = input.nextInt();
 
         String studentWithHighestScore = "dummy";
-        int highestScore = 0;
+        int highestScore = -1;
         for(int i = 1; i <= numberOfStudents; i++) {
             System.out.printf("Enter name und score for student %d: ", i);
             String name = input.next();
@@ -122,5 +122,46 @@ public class Exercises {
         }
         
         System.out.printf("The student with the highest score is %s", studentWithHighestScore);
+    }
+
+    /**
+     * 5.9
+     */
+    public void findTwoLowestScores() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number of students: ");
+        int numberOfStudents = input.nextInt();
+
+        String studentWithLowestScore = "dummy";
+        String studentWithSecondLowestScore = "dummyy";
+
+        int lowestScore = -1;
+        int secondLowestScore = -1;
+
+        for(int i = 1; i <= numberOfStudents; i++) {
+            System.out.printf("Enter name und score for student %d: ", i);
+            String name = input.next();
+            int score = input.nextInt();
+
+            if(i == 1) {
+                studentWithLowestScore = name;
+                lowestScore = score;
+            }
+
+            if(i == 2) {
+                studentWithSecondLowestScore = name;
+                secondLowestScore = score;
+            }
+
+            if(score < lowestScore) {
+                secondLowestScore = lowestScore;
+                lowestScore = score;
+
+                studentWithSecondLowestScore = studentWithLowestScore;
+                studentWithLowestScore = name;
+            }
+        }
+        
+        System.out.printf("The student with the lowest score is %s\nThe student with the second lowest score is %s", studentWithLowestScore, studentWithSecondLowestScore);
     }
 }
