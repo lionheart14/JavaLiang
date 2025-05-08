@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.squareMeterToPing();
+        exercises.computeFutureTuition();
     }
 
     /**
@@ -84,6 +84,19 @@ public class Exercises {
             double ping2 = squareMeter2 / 3.305;
             System.out.printf("%-12d %12.3f   |   %-12d %12.3f\n", ping, squareMeter1, squareMeter2, ping2);
             squareMeter2 += 5;
+        }
+    }
+    
+    /**
+     * 5.7
+     */
+    public void computeFutureTuition() {
+        Scanner input = new Scanner(System.in);
+        double tuition = 10000;
+        final double INCREMENT = 1.06;
+        for(int years = 1; years <= 10; years++) {
+            tuition *= INCREMENT;
+            System.out.printf("Tuition for %d year: %.2f\n", years, tuition);
         }
     }
 }
