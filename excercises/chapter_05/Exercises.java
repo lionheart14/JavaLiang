@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.findTwoLowestScores();
+        exercises.findNumbersDivisibleBy3And4();
     }
 
     /**
@@ -163,5 +163,18 @@ public class Exercises {
         }
         
         System.out.printf("The student with the lowest score is %s\nThe student with the second lowest score is %s", studentWithLowestScore, studentWithSecondLowestScore);
+    }
+
+    /**
+     * 5.10
+     */
+    public void findNumbersDivisibleBy3And4() {
+        String numbersDivisibleBy3And4 = "";
+        for(int number = 100; number <= 1000; number++) {
+            if(number % 3 == 0 && number % 4 == 0) {
+                numbersDivisibleBy3And4 = numbersDivisibleBy3And4 + number + " ";
+            }
+        }
+        System.out.println(numbersDivisibleBy3And4);
     }
 }
