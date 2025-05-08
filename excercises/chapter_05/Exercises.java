@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.computeFutureTuition();
+        exercises.findHighestScore();
     }
 
     /**
@@ -98,5 +98,29 @@ public class Exercises {
             tuition *= INCREMENT;
             System.out.printf("Tuition for %d year: %.2f\n", years, tuition);
         }
+    }
+
+    /**
+     * 5.8
+     */
+    public void findHighestScore() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number of students: ");
+        int numberOfStudents = input.nextInt();
+
+        String studentWithHighestScore = "dummy";
+        int highestScore = 0;
+        for(int i = 1; i <= numberOfStudents; i++) {
+            System.out.printf("Enter name und score for student %d: ", i);
+            String name = input.next();
+            int score = input.nextInt();
+
+            if(score > highestScore) {
+                highestScore = score;
+                studentWithHighestScore = name;
+            }
+        }
+        
+        System.out.printf("The student with the highest score is %s", studentWithHighestScore);
     }
 }
