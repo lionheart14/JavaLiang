@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.findNumbersDivisibleBy3And4();
+        exercises.findNumbersDivisibleBy3Or4ButNotBoth();
     }
 
     /**
@@ -176,5 +176,25 @@ public class Exercises {
             }
         }
         System.out.println(numbersDivisibleBy3And4);
+    }
+
+    /**
+     * 5.11
+     */
+    public void findNumbersDivisibleBy3Or4ButNotBoth() {
+        String numbersDivisibleBy3Or4ButNotBoth = "";
+        int count = 0;
+        for(int number = 100; number <= 200; number++) {
+            if(count == 10) {
+                numbersDivisibleBy3Or4ButNotBoth += "\n";
+                count = 0;
+            }
+            
+            if(number % 3 == 0 ^ number % 4 == 0) {
+                numbersDivisibleBy3Or4ButNotBoth = numbersDivisibleBy3Or4ButNotBoth + number + " ";
+                count++;
+            }
+        }
+        System.out.println(numbersDivisibleBy3Or4ButNotBoth);
     }
 }
