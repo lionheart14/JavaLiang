@@ -20,12 +20,5 @@ public class Test {
         // double amount = 5;
         // System.out.println(amount / 2);
         // System.out.println(5 / 2);
-
-        int a;
-        int b;
-        int c;
-
-        double midnightFormula = ((b * -1) + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / 2 * a;
-
     }
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.largestNumber();
+        exercises.greatestCommonDivisor();
     }
 
     /**
@@ -223,6 +223,31 @@ public class Exercises {
                 break;
             }
             number--;
+        }
+    }
+
+    /**
+     * 5.14
+     */
+    public void greatestCommonDivisor() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter integer n1: ");
+        int n1 = input.nextInt();
+        System.out.print("Enter integer n2: ");
+        int n2 = input.nextInt();
+
+        int d = n1 <= n2 ? n1 : n2; 
+
+        while(d != 1) {
+            if(n1 % d == 0 && n2 % d == 0) {
+                System.out.printf("The greatest common divisor for %d and %d is %d", n1, n2, d);
+                break;
+            }
+            d--;
+        }
+
+        if(d == 1) {
+            System.out.printf("No commmon divisor for %d and %d", n1, n2);
         }
     }
 }
