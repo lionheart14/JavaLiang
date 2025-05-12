@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.findNumbersDivisibleBy3Or4ButNotBoth();
+        exercises.smallestNumber();
     }
 
     /**
@@ -196,5 +196,18 @@ public class Exercises {
             }
         }
         System.out.println(numbersDivisibleBy3Or4ButNotBoth);
+    }
+
+    /**
+     * 5.12
+     */
+    public void smallestNumber() {
+        final int LIMIT = 12000;
+        for(int number = 0; number < LIMIT; number++) {
+            if(Math.pow(number, 3) > LIMIT) {
+                System.out.printf("%d | %.0f", number, Math.pow(number, 3));
+                break;
+            }
+        }
     }
 }
