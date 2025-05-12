@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.smallestNumber();
+        exercises.largestNumber();
     }
 
     /**
@@ -208,6 +208,21 @@ public class Exercises {
                 System.out.printf("%d | %.0f", number, Math.pow(number, 3));
                 break;
             }
+        }
+    }
+
+    /**
+     * 5.13
+     */
+    public void largestNumber() {
+        final int LIMIT = 12000;
+        int number = LIMIT;
+        while(number != 0) {
+            if(Math.pow(number, 2) < 12000) {
+                System.out.printf("%d | %.0f", number, Math.pow(number, 2));
+                break;
+            }
+            number--;
         }
     }
 }
