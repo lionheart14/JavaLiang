@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.asciiCharacterTable();
+        exercises.findFactorsOfInteger();
     }
 
     /**
@@ -269,4 +269,29 @@ public class Exercises {
             }
         }
     }
+
+    /**
+     * 5.16
+     */
+    public void findFactorsOfInteger() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = input.nextInt();
+        String factors = "";
+
+        while (n != 1) {
+            for (int i = 2; i <= n; i++) {
+                if (n % i == 0) {
+                    factors = factors + i;
+                    n = n / i;
+
+                    if (n != 1) {
+                        factors = factors + ", ";
+                    }
+                break;
+                }
+            }
+        }
+        System.out.println(factors);
+    }   
 }
