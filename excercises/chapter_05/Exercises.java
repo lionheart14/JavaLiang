@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.findFactorsOfInteger();
+        exercises.displayPyramid();
     }
 
     /**
@@ -293,5 +293,36 @@ public class Exercises {
             }
         }
         System.out.println(factors);
-    }   
+    }
+    
+    /**
+     * 5.17
+     */
+    public void displayPyramid() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of lines: ");
+        int lines = input.nextInt();
+
+        while(lines < 1 || lines > 15) {
+            System.out.print("Enter the number of lines (1 - 15): ");
+            lines = input.nextInt();
+        }
+
+        for(int i = 0; i < 7; i++) {
+            int numbersPerLine = lines * 2 - 1;
+            int middle = lines;
+            int number = lines;
+            for(int j = 1; j <= numbersPerLine; j++) {
+                if(j < middle) {
+                    System.out.print(number + " ");
+                    number--;
+                } else {
+                    System.out.print(number + " " );
+                    number++;
+                }
+            }
+            lines--;
+            System.out.println();
+        }
+    }
 }
