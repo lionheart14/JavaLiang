@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.displayPyramid();
+        exercises.pattern1(6);
     }
 
     /**
@@ -345,6 +345,15 @@ public class Exercises {
             case 3:
             case 4:
             default: System.out.println("Error");
+        }
+    }
+
+    public void pattern1(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int j = 0; j < i; j++) {
+                System.out.print('*' + " ");
+            }
+            System.out.println();
         }
     }
 }
