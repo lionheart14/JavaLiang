@@ -325,4 +325,26 @@ public class Exercises {
             System.out.println();
         }
     }
+
+    /**
+     * 5.18
+     */
+    public void differentPatterns() {
+        Scanner input = new Scanner(System.in);
+        int pattern = -1;
+        final int NUMBERS_PER_LINE = 6;
+
+        while(pattern < 1 || pattern > 4) {
+            System.out.print("Enter number of pattern (1-4): ");
+            pattern = input.nextInt();
+        }
+
+        switch(pattern) {
+            case 1: 
+            case 2: 
+            case 3:
+            case 4:
+            default: System.out.println("Error");
+        }
+    }
 }
