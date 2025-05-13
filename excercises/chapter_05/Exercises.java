@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.pattern1(6);
+        exercises.patternC(6);
     }
 
     /**
@@ -348,10 +348,28 @@ public class Exercises {
         }
     }
 
-    public void pattern1(int n) {
+    public void patternA(int n) {
         for(int i = 1; i <= n; i++) {
             for(int j = 0; j < i; j++) {
                 System.out.print('*' + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void patternB(int n) {
+        for(int i = n; i >= 1; i--) {
+            for(int j = 0; j < i; j++) {
+                System.out.print('*' + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void patternC(int n) {
+        for(int i = 1; i <= n; i++) {
+            for(int j = 0; j < i; j++) {
+                System.out.printf( "%" + n + "c", '*');
             }
             System.out.println();
         }
