@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.greatestCommonDivisor();
+        exercises.asciiCharacterTable();
     }
 
     /**
@@ -248,6 +248,25 @@ public class Exercises {
 
         if(d == 1) {
             System.out.printf("No commmon divisor for %d and %d", n1, n2);
+        }
+    }
+
+    /**
+     * 5.15
+     */
+    public void asciiCharacterTable() {
+        int i = '!';
+        int j = '~';
+        int cnt = 0;
+        for(int n = i; n <= j; n++) {
+            char c = (char) n;
+            System.out.print(c + " ");
+            cnt++;
+
+            if(cnt == 10) {
+                cnt = 0;
+                System.out.println();
+            }
         }
     }
 }
