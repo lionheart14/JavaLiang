@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.patternD(6);
+        exercises.differentPatterns();
     }
 
     /**
@@ -340,10 +340,10 @@ public class Exercises {
         }
 
         switch(pattern) {
-            case 1: 
-            case 2: 
-            case 3:
-            case 4:
+            case 1: patternA(NUMBERS_PER_LINE); break;
+            case 2: patternB(NUMBERS_PER_LINE); break;
+            case 3: patternC(NUMBERS_PER_LINE); break;
+            case 4: patternD(NUMBERS_PER_LINE); break;
             default: System.out.println("Error");
         }
     }
@@ -386,4 +386,6 @@ public class Exercises {
         System.out.println();
         }
     }
+
+    
 }
