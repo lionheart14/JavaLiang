@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.differentPatterns();
+        exercises.pyramidPattern();
     }
 
     /**
@@ -386,6 +386,44 @@ public class Exercises {
         System.out.println();
         }
     }
+
+    public void pyramidPattern() {
+        int maxRows = 8;
+        int base = 3;
+
+        int maxValue = (int) Math.pow(base, maxRows - 1);
+        int cellWidth = String.valueOf(maxValue).length() + 2;
+        int totalWidth = (maxRows * 2 - 1) * cellWidth;
+
+        for (int row = 1; row <= maxRows; row++) {
+            int numCount = row * 2 - 1;
+            int lineLength = numCount * cellWidth;
+            int padding = (totalWidth - lineLength) / 2;
+
+            // Zentrierung
+            for (int s = 0; s < padding; s++) {
+                System.out.print(" ");
+            }
+
+            // Aufsteigender Teil
+            int temp = 1;
+            for (int j = 0; j < row; j++) {
+                System.out.printf("%" + cellWidth + "d", temp);
+                temp *= base;
+            }
+
+            // Rückwärts: temp ist nach der letzten Schleife 1x zu viel
+            temp /= base;
+
+            // Absteigender Teil
+            for (int j = 1; j < row; j++) {
+                temp /= base;
+                System.out.printf("%" + cellWidth + "d", temp);
+            }
+
+            System.out.println();
+        }
+}
 
     
 }
