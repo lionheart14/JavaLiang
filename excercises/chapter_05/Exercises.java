@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.pyramidPattern();
+        exercises.displayPrimeNumbers();
     }
 
     /**
@@ -423,7 +423,28 @@ public class Exercises {
 
             System.out.println();
         }
-}
+    }
+    /**
+     * 5.20
+     */
+    public void displayPrimeNumbers() {
+        int space = 0;
+        for(int number = 2; number <= 1200; number++) {
+            for(int i = 2; i <= number; i++) {
+                if(number % i == 0 && number != i) {
+                    break;
+                }
+                if(number == i) {
+                    System.out.print(number + " ");
+                    space++;
+                }
+            }
+            if(space == 10) {
+                System.out.println();
+                space = 0;
+            }
+        } 
+    }
 
     
 }
