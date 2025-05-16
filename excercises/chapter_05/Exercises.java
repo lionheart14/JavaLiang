@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.displayPrimeNumbers();
+        exercises.computeInterestRates();
     }
 
     /**
@@ -424,6 +424,7 @@ public class Exercises {
             System.out.println();
         }
     }
+
     /**
      * 5.20
      */
@@ -444,6 +445,24 @@ public class Exercises {
                 space = 0;
             }
         } 
+    }
+
+    /**
+     * 5.21
+     */
+    public void computeInterestRates() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Loan Amount: ");
+        int loanAmout = input.nextInt();
+        System.out.print("Number of Years: ");
+        int years = input.nextInt();
+
+        System.out.printf("%-20s %-20s %-20s\n", "Interest Rate", "Monthly Payment", "Total Payment");
+        for(double interestRate = 5; interestRate <= 10; interestRate += 0.25) {
+            double totalPayment = interestRate / 100 * loanAmout * years;
+            double monthlyPayment = totalPayment / years / 12;
+            System.out.printf("%.3f%-20%%-20.2f%.2f\n", interestRate, monthlyPayment, totalPayment);
+        }
     }
 
     
