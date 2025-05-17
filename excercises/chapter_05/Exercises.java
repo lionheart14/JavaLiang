@@ -500,12 +500,12 @@ public class Exercises {
     public void cancellationErrors() {
         float sumL = 0; 
         for(int i = 1; i <= 50000; i++) {
-            sumL = sumL + 1 / i;
+            sumL = sumL + 1.0f / i;
         }
 
         float sumR = 0;
         for(int i = 50000; i >= 1; i--) {
-            sumR = sumR + 1 / i;
+            sumR = sumR + 1.0f / i;
         }
         System.out.println(sumL);
         System.out.println(sumR);
