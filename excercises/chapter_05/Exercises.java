@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.loanAmortization();
+        exercises.cancellationErrors();
     }
 
     /**
@@ -494,5 +494,21 @@ public class Exercises {
         }
     }
 
+    /**
+     * 5.23
+     */
+    public void cancellationErrors() {
+        float sumL = 0; 
+        for(int i = 1; i <= 50000; i++) {
+            sumL = sumL + 1 / i;
+        }
+
+        float sumR = 0;
+        for(int i = 50000; i >= 1; i--) {
+            sumR = sumR + 1 / i;
+        }
+        System.out.println(sumL);
+        System.out.println(sumR);
+    }
     
 }
