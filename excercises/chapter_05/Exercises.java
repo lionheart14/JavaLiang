@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.cancellationErrors();
+        exercises.sumASeries();
     }
 
     /**
@@ -509,6 +509,20 @@ public class Exercises {
         }
         System.out.println(sumL);
         System.out.println(sumR);
+    }
+
+    /**
+     * 5.24
+     */
+    public void sumASeries() {
+        float sum = 0;
+        float nenner = 3.0f;
+        for(int zaehler = 1; zaehler <= 97; zaehler += 2) {
+            sum += zaehler / nenner;
+            nenner += 2;
+        }
+
+        System.out.println(sum);
     }
     
 }
