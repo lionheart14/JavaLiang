@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.computeInterestRates();
+        exercises.loanAmortization();
     }
 
     /**
@@ -462,6 +462,35 @@ public class Exercises {
             double totalPayment = interestRate / 100 * loanAmout * years;
             double monthlyPayment = totalPayment / years / 12;
             System.out.printf("%.3f%-20%%-20.2f%.2f\n", interestRate, monthlyPayment, totalPayment);
+        }
+    }
+
+    /**
+     * 5.22
+     */
+    public void loanAmortization() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Loan Amount: ");
+        int loanAmout = input.nextInt();
+        System.out.print("Number of Years: ");
+        int years = input.nextInt();
+        System.out.print("Annual Interest Rate: ");
+        int annualInterestRate = input.nextInt();
+        int monthlyInterestRate = annualInterestRate / 12;
+
+        double totalPayment = annualInterestRate / 100 * loanAmout * years;
+        double monthlyPayment = totalPayment / 12 / years;
+
+        double balance = loanAmout;
+        double monthlyInterest = monthlyInterestRate * balance;
+        double principal = monthlyPayment - monthlyInterest;
+        
+        for (int i = 1; i <= years * 12; i++) {
+            monthlyInterest = monthlyInterestRate * balance;
+            principal = monthlyPayment - monthlyInterest;
+            balance = balance - principal;
+            System.out.println(i + "\t\t" + monthlyInterest
+                + "\t\t" + principal + "\t\t" + balance);
         }
     }
 
