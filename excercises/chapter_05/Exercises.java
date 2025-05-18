@@ -524,5 +524,11 @@ public class Exercises {
 
         System.out.println(sum);
     }
-    
+
+    /**
+     * 5.25
+     */
+    public void computePI() {
+        // for(int i = )
+    }
 }
