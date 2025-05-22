@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.leapYear();
+        exercises.displayFirstDaysOfEachMonth();
     }
 
     /**
@@ -569,5 +569,60 @@ public class Exercises {
         System.out.println("The number of leap years is " + numberOfLeapYears);
     }
 
-    
+    /**
+     * 5.28
+     */
+    public void displayFirstDaysOfEachMonth() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = input.nextInt();
+        System.out.print("Enter the first day of the year: ");
+        int day = input.nextInt();
+
+        int lastDay = 31;
+        for(int month = 1; month <= 12; month++) {
+            if(month == 2) lastDay = 28;
+            
+            String StringMonth = "";
+            switch(month) {
+                case 1: StringMonth = "January"; break;
+                case 2: StringMonth = "Febrary"; break;
+                case 3: StringMonth = "March"; break;
+                case 4: StringMonth = "April"; break;
+                case 5: StringMonth = "May"; break;
+                case 6: StringMonth = "June"; break;
+                case 7: StringMonth = "Juli"; break;
+                case 8: StringMonth = "August"; break;
+                case 9: StringMonth = "September"; break;
+                case 10: StringMonth = "October"; break;
+                case 11: StringMonth = "November"; break;
+                case 12: StringMonth = "December"; break;
+            }
+            
+            String StringDay = "";
+            switch(day) {
+                case 1: StringDay = "Monday"; break;
+                case 2: StringDay = "Tuesday"; break;
+                case 3: StringDay = "Wednesday"; break;
+                case 4: StringDay = "Thursday"; break;
+                case 5: StringDay = "Friday"; break;
+                case 6: StringDay = "Saturday"; break;
+                case 7: StringDay = "Sunday"; break;
+            }
+            
+            System.out.printf("%s 1, %d is %s\n", StringMonth, year, StringDay);
+            
+            for(int days = 1; days <= lastDay; days++) {
+                if(day >= 7) day = 0;
+                day++;
+            }
+
+            if(lastDay == 31) {
+                lastDay = 30;
+            } else {
+                lastDay = 31;
+            }
+        }
+        
+    }
 }
