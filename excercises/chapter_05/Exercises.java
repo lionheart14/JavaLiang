@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.sumASeries();
+        exercises.computeE();
     }
 
     /**
@@ -530,5 +530,28 @@ public class Exercises {
      */
     public void computePI() {
         // for(int i = )
+    }
+
+    /**
+     * 5.26
+     */
+    public void computeE() {
+        double e = 1;
+        for(int i = 1; i <= 10000; i++) {
+            double n = 1;
+            while(i >= 1) {
+                n *= i;
+                i--;
+            }
+            e += (1 / n);
+        }
+        System.out.println(e);
+    }
+
+    /**
+     * 5.27
+     */
+    public void leapYear() {
+        
     }
 }
