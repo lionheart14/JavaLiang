@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.computeE();
+        exercises.leapYear();
     }
 
     /**
@@ -552,6 +552,22 @@ public class Exercises {
      * 5.27
      */
     public void leapYear() {
-        
+        int counter = 0;
+        int numberOfLeapYears = 0;
+        for(int year = 2014; year <= 2114; year++) {
+            if(year % 4 == 0) {
+                System.out.print(year + " ");
+                counter++;
+                numberOfLeapYears++;
+
+                if(counter == 10) {
+                    System.out.println();
+                    counter = 0;
+                }
+            }
+        }
+        System.out.println("The number of leap years is " + numberOfLeapYears);
     }
+
+    
 }
