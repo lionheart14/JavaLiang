@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.displayFirstDaysOfEachMonth();
+        exercises.displayCalendars();
     }
 
     /**
@@ -623,6 +623,74 @@ public class Exercises {
                 lastDay = 31;
             }
         }
-        
+    }
+
+    public void displayCalendars() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = input.nextInt();
+        System.out.print("Enter the first day of the year: ");
+        int day = input.nextInt();
+
+        int lastDay = 31;
+        for(int month = 1; month <= 12; month++) {
+            if(month == 2) lastDay = 28;
+            
+            String stringMonth = "";
+            switch(month) {
+                case 1: stringMonth = "January"; break;
+                case 2: stringMonth = "Febrary"; break;
+                case 3: stringMonth = "March"; break;
+                case 4: stringMonth = "April"; break;
+                case 5: stringMonth = "May"; break;
+                case 6: stringMonth = "June"; break;
+                case 7: stringMonth = "Juli"; break;
+                case 8: stringMonth = "August"; break;
+                case 9: stringMonth = "September"; break;
+                case 10: stringMonth = "October"; break;
+                case 11: stringMonth = "November"; break;
+                case 12: stringMonth = "December"; break;
+            }
+            
+            String stringDay = "";
+            switch(day) {
+                case 1: stringDay = "Monday"; break;
+                case 2: stringDay = "Tuesday"; break;
+                case 3: stringDay = "Wednesday"; break;
+                case 4: stringDay = "Thursday"; break;
+                case 5: stringDay = "Friday"; break;
+                case 6: stringDay = "Saturday"; break;
+                case 7: stringDay = "Sunday"; break;
+            }
+
+            System.out.printf("%20s %d\n", stringMonth, year);
+            System.out.println("---------------------------------------");
+            System.out.printf("%-6s%-6s%-6s%-6s%-6s%-6s%-6s\n", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+            
+            int space = 3;
+            for(int i = 1; i < day; i++ ) {
+                space += 6;
+            }
+            
+            for(int days = 1; days <= lastDay; days++) {
+                System.out.printf("%" + space +"d", days);
+                if(day >= 7){
+                    System.out.println();
+                    day = 0;
+                    space = 3;
+                } else {
+                    space = 6;   
+                }    
+                day++;
+            }
+
+            System.out.println();
+
+            if(lastDay == 31) {
+                lastDay = 30;
+            } else {
+                lastDay = 31;
+            }
+        }
     }
 }
