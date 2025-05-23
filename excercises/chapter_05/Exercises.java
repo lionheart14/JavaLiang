@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.decimalToBinary();
+        exercises.decimalToOctal();
     }
 
     /**
@@ -789,6 +789,16 @@ public class Exercises {
      * 5.38
      */
     public void decimalToOctal() {
-        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a decimal number: ");
+        int number = input.nextInt();
+        String binary = "";
+
+        while(number > 0) {
+            binary = number % 8 + binary;
+            number /= 8;
+        }
+
+        System.out.println(binary);
     }
 }
