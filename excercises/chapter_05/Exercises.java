@@ -740,14 +740,19 @@ public class Exercises {
         int divisorSum = 0;
         for(int i = 1; i < 10000; i++) {
             for(int j = i; j >= 1; j--) {
+                // same number excluded
                 if(j == i) continue;
+
+                // if divisor then sum
                 if(i % j == 0) {
                     divisorSum += j;
                 }
             }
+            //if sum of divisors = number then display
             if(divisorSum == i) {
                 System.out.println("Perfect number: " + i);
             }
+            //reset divisor sum in all cases
             divisorSum = 0;
         }
     }
