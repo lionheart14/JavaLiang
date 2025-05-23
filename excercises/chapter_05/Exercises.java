@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.summation();
+        exercises.decimalToBinary();
     }
 
     /**
@@ -766,5 +766,29 @@ public class Exercises {
             sum += 1 / (Math.sqrt(i) + Math.sqrt(++i));
         }
         System.out.println(sum);
+    }
+
+    /**
+     * 5.37
+     */
+    public void decimalToBinary() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a decimal number: ");
+        int number = input.nextInt();
+        String binary = "";
+
+        while(number > 0) {
+            binary += number % 2;
+            number /= 2;
+        }
+
+        System.out.println(binary);
+    }
+
+    /**
+     * 5.38
+     */
+    public void decimalToOctal() {
+        
     }
 }
