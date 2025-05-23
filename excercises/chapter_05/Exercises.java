@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.headsOrTails();
+        exercises.occurenceOfMaxNumbers();
     }
 
     /**
@@ -818,5 +818,30 @@ public class Exercises {
         System.out.println("Number of heads: " + numHeads);
         System.out.println("Number of tails: " + numTails);
     }
+
+    /**
+     * 5.41
+     */
+    public void occurenceOfMaxNumbers() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter string of numbers: ");
+        String numbers = input.nextLine();
+        int max = 1;
+        int maxCount = 1;
+        for(int i = 0; i < numbers.length(); i++) {
+            if(Character.isDigit(numbers.charAt(i))){
+                int num = numbers.charAt(i);
+                if(num > max) {
+                    max = num;
+                    maxCount = 1;
+                } else if(num == max) {
+                    maxCount++;
+                }
+            }
+        }
+        System.out.println("The largest number is " + Character.getNumericValue(max));
+        System.out.println("The occurence count of the largest number is " + maxCount);
+    }
+
 }
     
