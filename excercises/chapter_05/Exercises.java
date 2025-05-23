@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.computeCDValue();
+        exercises.perfectNumber();
     }
 
     /**
@@ -713,7 +713,7 @@ public class Exercises {
             System.out.printf("Savings for month %d: %.3f\n", i, finalAmount);
         }
     }
-    
+
     /**
      * 5.31
      */
@@ -730,6 +730,25 @@ public class Exercises {
         for(int i = 1; i <= months; i++) {
             amount = amount + amount * percentageYield / 1200;
             System.out.printf("%-10d %.2f\n", i, amount);
+        }
+    }
+
+    /**
+     * 5.33
+     */
+    public void perfectNumber() {
+        int divisorSum = 0;
+        for(int i = 1; i < 10000; i++) {
+            for(int j = i; j >= 1; j--) {
+                if(j == i) continue;
+                if(i % j == 0) {
+                    divisorSum += j;
+                }
+            }
+            if(divisorSum == i) {
+                System.out.println("Perfect number: " + i);
+            }
+            divisorSum = 0;
         }
     }
 }
