@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.decimalToOctal();
+        exercises.headsOrTails();
     }
 
     /**
@@ -801,4 +801,22 @@ public class Exercises {
 
         System.out.println(binary);
     }
+
+    /**
+     * 5.40
+     */
+    public void headsOrTails() {
+        int numHeads = 0;
+        int numTails = 0;
+        for(int i = 0; i < 1000000; i++) {
+            if(Math.random() > 0.5) {
+                numHeads++;
+            } else {
+                numTails++;
+            }
+        }
+        System.out.println("Number of heads: " + numHeads);
+        System.out.println("Number of tails: " + numTails);
+    }
 }
+    
