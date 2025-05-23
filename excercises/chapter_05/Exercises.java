@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.perfectNumber();
+        exercises.summation();
     }
 
     /**
@@ -755,5 +755,16 @@ public class Exercises {
             //reset divisor sum in all cases
             divisorSum = 0;
         }
+    }
+
+    /**
+     * 5.35
+     */
+    public void summation() {
+        double sum = 0;
+        for(int i = 1; i <= 1000; i++) {
+            sum += 1 / (Math.sqrt(i) + Math.sqrt(++i));
+        }
+        System.out.println(sum);
     }
 }
