@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.compoundValue();
+        exercises.computeCDValue();
     }
 
     /**
@@ -712,6 +712,24 @@ public class Exercises {
             finalAmount = (finalAmount + amount) * (1 + monthlyInterest);
             System.out.printf("Savings for month %d: %.3f\n", i, finalAmount);
         }
+    }
+    
+    /**
+     * 5.31
+     */
+    public void computeCDValue() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the amount: ");
+        double amount = input.nextDouble();
+        System.out.print("Enter annual percentage yield: ");
+        double percentageYield = input.nextDouble();
+        System.out.print("Enter the number of months: ");
+        int months = input.nextInt();
 
+        System.out.printf("%-10s %s\n", "Month", "CD Value");
+        for(int i = 1; i <= months; i++) {
+            amount = amount + amount * percentageYield / 1200;
+            System.out.printf("%-10d %.2f\n", i, amount);
+        }
     }
 }
