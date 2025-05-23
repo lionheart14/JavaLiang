@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.displayCalendars();
+        exercises.compoundValue();
     }
 
     /**
@@ -692,5 +692,26 @@ public class Exercises {
                 lastDay = 31;
             }
         }
+    }
+
+    /**
+     * 5.30
+     */
+    public void compoundValue() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the annual interest rate: ");
+        double interestRate = input.nextDouble();
+        System.out.print("Enter the savings amount: ");
+        double amount = input.nextDouble();
+        System.out.print("Enter the number of months: ");
+        int months = input.nextInt();
+
+        double finalAmount = 0;
+        double monthlyInterest = interestRate / 100 / 12;
+        for(int i = 1; i <= months; i++) {
+            finalAmount = (finalAmount + amount) * (1 + monthlyInterest);
+            System.out.printf("Savings for month %d: %.3f\n", i, finalAmount);
+        }
+
     }
 }
