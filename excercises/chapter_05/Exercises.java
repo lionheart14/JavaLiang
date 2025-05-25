@@ -858,5 +858,16 @@ public class Exercises {
         }
         System.out.println("The total number of all combinations is " + count);
     }
+
+    /**
+     * 5.44
+     */
+    public void computerArchitecture() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a integer: ");
+        int value = input.nextInt();
+
+        String binary = Integer.toBinaryString(value);
+        System.out.println(binary);
 }
     
