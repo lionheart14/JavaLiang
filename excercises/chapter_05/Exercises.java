@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.mathCombinations();
+        exercises.reverseString();
     }
 
     /**
@@ -869,5 +869,17 @@ public class Exercises {
 
         String binary = Integer.toBinaryString(value);
         System.out.println(binary);
+    }
+
+    public void reverseString() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String st = input.nextLine();
+
+        System.out.print("The reversed string is ");
+        for(int i = st.length() - 1; i >= 0; i--) {
+            System.out.print(st.charAt(i));
+        }
+    } 
 }
     
