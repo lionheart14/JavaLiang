@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.reverseString();
+        exercises.checkISBN();
     }
 
     /**
@@ -870,7 +870,10 @@ public class Exercises {
         String binary = Integer.toBinaryString(value);
         System.out.println(binary);
     }
-
+    
+    /**
+     * 5.46
+     */
     public void reverseString() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a string: ");
@@ -880,6 +883,39 @@ public class Exercises {
         for(int i = st.length() - 1; i >= 0; i--) {
             System.out.print(st.charAt(i));
         }
-    } 
+    }
+
+    /**
+     * 5.47
+     */
+    public void checkISBN() {
+        Scanner input = new Scanner(System.in);
+        String s = "";
+
+        while(s.length() != 12) {
+            System.out.print("Enter the first 12 digits of an ISBN-13 as a String: ");
+            s = input.nextLine();
+        }
+
+        int d1 = s.charAt(0);
+        int d2 = s.charAt(1);
+        int d3 = s.charAt(2);
+        int d4 = s.charAt(3);
+        int d5 = s.charAt(4);
+        int d6 = s.charAt(5);
+        int d7 = s.charAt(6);
+        int d8 = s.charAt(7);
+        int d9 = s.charAt(8);
+        int d10 = s.charAt(9);
+        int d11 = s.charAt(10);
+        int d12 = s.charAt(11);
+
+        int checksum = 10 - (d1 + 3 * d2 + d3 + 3 * d4 + d5 + 3 * d6 + d7 + 3* d8 + d9 + 3 * d10 + d11 + 3 * d12) % 10;
+        if(checksum == 10) checksum = 0;
+
+        System.out.println("The ISBN-13 number is " + s + checksum);
+    }
+
+    
 }
     
