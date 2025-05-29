@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.printMultiplicationTable();
+        exercises.longestCommonPrefix();
     }
 
     /**
@@ -977,6 +977,27 @@ public class Exercises {
     /**
      * 5.51
      */
-    
+    public void longestCommonPrefix() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the first string: ");
+        String s1 = input.nextLine();
+        System.out.print("Enter the second String: ");
+        String s2 = input.nextLine();
+
+        String commonPrefix = "";
+        int longestString = s1.length() <= s2.length() ? s1.length() : s2.length();
+        for(int i = 0; i < longestString; i++) {
+            if(s1.charAt(i) == s2.charAt(i)) {
+                commonPrefix += s1.charAt(i);
+            } else {
+                break;
+            }
+        } 
+        if(commonPrefix.isEmpty()) {
+            System.out.println("There is no common prefix.");
+        } else {
+            System.out.println("The common prefix is " + commonPrefix);
+        }
+    }
 }
     
