@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.processString();
+        exercises.countVowelsAndConsonants();
     }
 
     /**
@@ -932,6 +932,30 @@ public class Exercises {
             }
         }
         System.out.println(output);
+    }
+
+    /**
+     * 5.49
+     */
+    public void countVowelsAndConsonants() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String s = input.nextLine();
+        String consonants = "AEIOU";
+
+        int numVowels = 0;
+        int numConsonants = 0;
+
+        for(int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if(consonants.contains(String.valueOf(Character.toUpperCase(c)))) {
+                numVowels++;
+            } else if(c != ' ') {
+                numConsonants++;
+            }
+        }
+        System.out.println("The number of vowels is " + numVowels);
+        System.out.println("The number of consonants is " + numConsonants);
     }
 }
     
