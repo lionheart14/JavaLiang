@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.checkISBN();
+        exercises.processString();
     }
 
     /**
@@ -916,6 +916,22 @@ public class Exercises {
         System.out.println("The ISBN-13 number is " + s + checksum);
     }
 
-    
+    /**
+     * 5.48
+     */
+    public void processString() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String s = input.nextLine();
+
+        String output = "";
+        for(int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) == ' ') continue;
+            if(i % 2 != 0) {
+                output += s.charAt(i);
+            }
+        }
+        System.out.println(output);
+    }
 }
     
