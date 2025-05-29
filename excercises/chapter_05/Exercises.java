@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Exercises exercises = new Exercises();
-        exercises.countVowelsAndConsonants();
+        exercises.printMultiplicationTable();
     }
 
     /**
@@ -957,5 +957,26 @@ public class Exercises {
         System.out.println("The number of vowels is " + numVowels);
         System.out.println("The number of consonants is " + numConsonants);
     }
+
+    /**
+     * 5.50
+     */
+    public void printMultiplicationTable() {
+         Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String s = input.nextLine();
+
+        for(int i = 1; i <= 9; i++) {
+            for(int j = 1; j <= 9; j++) {
+                System.out.printf("%d*%d= %d   ", i, j, i * j);
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * 5.51
+     */
+    
 }
     
