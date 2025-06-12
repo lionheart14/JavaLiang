@@ -35,4 +35,9 @@ public class Test {
     public char convertLetter(char c) {
         return ' ';
     }
+
+    /**
+     * 6.9.1
+     */
+    //A local variable is a varibale valid in the scope it is defined in
 }
