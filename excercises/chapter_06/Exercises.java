@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter three numbers: ");
-        displaySortedNumbers(input.nextDouble(), input.nextDouble(), input.nextDouble());
+        System.out.println(futureInvestmentValue(1000, 0.09 / 12, 30));
     }
-
     /**
      * 6.1
      */
@@ -66,5 +64,30 @@ public class Exercises {
             }
         }
         System.out.printf("%.2f > %.2f > %.2f", num1, num2, num3);
-    } 
+    }
+    
+    /**
+     * 6.6
+     */
+    public static void displayPattern(int n) {
+
+    }
+
+    /**
+     * 6.7
+     */
+    public static double futureInvestmentValue(double investmentAmount, double monthlyInterestRate, int years) {
+        double annualInterestRate = monthlyInterestRate * 12;
+        System.out.println("The amount invested: " + investmentAmount);
+        System.out.println("Annual interest rate: " + annualInterestRate);
+
+        double futureValue = investmentAmount;
+        System.out.printf("%-10s %s \n", "Years", "Future Value");
+        for(int i = 1; i <= years; i++) {
+            futureValue *= (annualInterestRate + 1);
+            System.out.printf("%-2d", i);
+            System.out.printf("%21.2f \n", futureValue);
+        }
+        return futureValue;
+    }
 }
