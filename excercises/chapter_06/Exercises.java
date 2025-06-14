@@ -2,7 +2,7 @@ package excercises.chapter_06;
 
 public class Exercises {
     public static void main(String[] args) {
-        sumDigits(1);
+        System.out.println(sumDigits(234));
     }
 
     /**
@@ -18,6 +18,11 @@ public class Exercises {
      */
     public static int sumDigits(long n) {
         String s = String.valueOf(n);
-        System.out.println(s);
+        int sum = 0;
+        for(int i = 0; i < s.length(); i++) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
     }
 }
