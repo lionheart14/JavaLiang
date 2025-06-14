@@ -25,4 +25,21 @@ public class Exercises {
         }
         return sum;
     }
+
+    /**
+     * 6.3
+     */
+    public static int reverse(int number) {
+        String s = String.valueOf(number);
+        String reverse = "";
+        for(int i = 0; i < s.length(); i++) {
+            reverse += number % 10;
+            number /= 10;
+        }
+        return Integer.parseInt(reverse);
+    }
+
+    public static boolean isPalindrome(int number) {
+        return number == reverse(number);
+    }
 }
