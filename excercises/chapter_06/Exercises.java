@@ -1,8 +1,12 @@
 package excercises.chapter_06;
 
+import java.util.Scanner;
+
 public class Exercises {
     public static void main(String[] args) {
-        System.out.println(sumDigits(234));
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter three numbers: ");
+        displaySortedNumbers(input.nextDouble(), input.nextDouble(), input.nextDouble());
     }
 
     /**
@@ -42,4 +46,25 @@ public class Exercises {
     public static boolean isPalindrome(int number) {
         return number == reverse(number);
     }
+
+    //6.4 same as 6.3
+
+    /**
+     * 6.5
+     */
+    public static void displaySortedNumbers(double num1, double num2, double num3) {
+        double temp;
+        if(num1 < num2) {
+            if(num2 < num3) {
+                temp = num1;
+                num1 = num3;
+                num3 = temp;
+            } else {
+                temp = num1;
+                num1 = num2;
+                num2 = temp;
+            }
+        }
+        System.out.printf("%.2f > %.2f > %.2f", num1, num2, num3);
+    } 
 }
