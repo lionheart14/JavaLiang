@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println(futureInvestmentValue(1000, 0.09 / 12, 30));
+        distanceTest();
     }
     /**
      * 6.1
@@ -89,5 +89,25 @@ public class Exercises {
             System.out.printf("%21.2f \n", futureValue);
         }
         return futureValue;
+    }
+
+    /**
+     * 6.8
+     */
+    public static double mileToKilometer(double mile) {
+        return mile / 1.6;
+    }
+
+    public static double kilometerToMile(double kilometer) {
+        return kilometer * 1.6;
+    }
+
+    public static void distanceTest() {
+        System.out.printf("%-15s %-15s | %15s %15s \n", "Miles", "Kilometers", "Kilometers", "Miles");
+        int kilometers = 20;
+        for(int i = 1; i <= 10; i++) {
+            System.out.printf("%-15d %-15.3f | %7d %24.3f \n", i, kilometerToMile(i), kilometers, mileToKilometer(kilometers));
+            kilometers += 5;
+        }
     }
 }
