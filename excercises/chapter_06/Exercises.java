@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        testMatrix();
+        passwordTest();
     }
     /**
      * 6.1
@@ -155,8 +155,6 @@ public class Exercises {
         return sum;
     }
 
-    //TODO: 6.17, 6.18, 6.20, 6.26, 6.30 
-
     /**
      * 6.17
      */
@@ -179,4 +177,44 @@ public class Exercises {
             System.out.println();
         }
     }
+
+    /**
+     * 6.18
+     */
+    public static void passwordTest() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a password: ");
+        String s = input.nextLine();
+
+        if(validPassword(s)) {
+            System.out.println("Valid Password");
+        } else {
+            System.out.println("Invalid Password");
+        }
+    }
+
+    public static boolean validPassword(String s) {
+        int digitCount = 0;
+
+        if(s.length() < 10) return false;
+        
+        for(int i = 0; i < s.length() - 1; i++) {
+            char c = s.charAt(i);
+            if(c >= '1' && c <= '9') {
+                digitCount++;
+            } else if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+                break;
+            } else {
+                // Keine Zahl oder Buchstabe
+                return false;
+            }
+        }
+
+        if(digitCount < 3) return false;
+        return true;
+    }
+
+    
+    //TODO: 6.26, 6.30 
+
 }
