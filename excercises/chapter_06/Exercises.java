@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        distanceTest();
+        printNumbers(17, 100, 100);
     }
     /**
      * 6.1
@@ -108,6 +108,31 @@ public class Exercises {
         for(int i = 1; i <= 10; i++) {
             System.out.printf("%-15d %-15.3f | %7d %24.3f \n", i, kilometerToMile(i), kilometers, mileToKilometer(kilometers));
             kilometers += 5;
+        }
+    }
+
+    /**
+     * 6.9
+     */
+    // same as 6.8
+
+    /**
+     * 6.12
+     */
+    public static void printNumbers(int num1, int num2, int numPerLine) {
+        int cnt = 0;
+        num2--;
+        for(int i = 1; i <= numPerLine; i++) {
+            if(cnt >= 10) {
+                cnt = 0;
+                System.out.println();
+            }
+
+            if(num1 < num2) {
+                num1++;
+                System.out.print(num1 + " ");
+                cnt++;
+            }
         }
     }
 }
