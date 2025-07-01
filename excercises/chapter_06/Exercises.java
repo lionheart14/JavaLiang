@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        printNumbers(17, 100, 100);
+        computeSeries();
     }
     /**
      * 6.1
@@ -134,5 +134,24 @@ public class Exercises {
                 cnt++;
             }
         }
+    }
+
+    /**
+     * 6.13
+     */
+    public static void computeSeries() {
+        System.out.printf("%-10c %s \n", 'I', "m(i)");
+        System.out.printf("____________________\n");
+        for(int i = 1; i <= 20; i++) {
+            System.out.printf("%-10d %.4f\n", i, blackBox(i));
+        }
+    }
+
+    public static double blackBox(int j) {
+        double sum = 0;
+        for(int i = 1; i <= j; i++) {
+            sum += (double)i / (i + 2);
+        }
+        return sum;
     }
 }
