@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exercises {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        computeSeries();
+        testMatrix();
     }
     /**
      * 6.1
@@ -153,5 +153,30 @@ public class Exercises {
             sum += (double)i / (i + 2);
         }
         return sum;
+    }
+
+    //TODO: 6.17, 6.18, 6.20, 6.26, 6.30 
+
+    /**
+     * 6.17
+     */
+    public static void testMatrix() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = input.nextInt();
+
+        printMatrix(n);
+    }
+
+    public static void printMatrix(int n) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                int num = Math.random() > 0.5 ? 1 : 0;
+                System.out.print(num + " ");
+            }
+            
+            // Zeilenumbruch
+            System.out.println();
+        }
     }
 }
