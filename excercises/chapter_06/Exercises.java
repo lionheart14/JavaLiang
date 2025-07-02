@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        palindromicPrime();
+        craps();
     }
     /**
      * 6.1
@@ -244,6 +244,46 @@ public class Exercises {
     }
 
 
-    //TODO: 6.30 
+    /**
+     * 6.30
+     */
+    public static void craps() {
+        int d1 = throwDice();
+        int d2 = throwDice();
+        int sum = d1 + d2;
+        int point = sum;
+        
+        System.out.printf("You rolled %d + %d = %d\n", d1, d2, sum);
+
+        if(sum == 2 || sum == 3 || sum == 6) {
+            System.out.println("You lose");
+            return;
+        } else if(sum == 7 || sum == 11) {
+            System.out.println("You win");
+            return;
+        } else {
+            System.out.println("Point is " + sum);
+        }
+
+        do {
+            d1 = throwDice();
+            d2 = throwDice();
+            sum = d1 + d2;
+
+            System.out.printf("You rolled %d + %d = %d\n", d1, d2, sum);
+
+            // losing condition
+            if(sum == 7) {
+                System.out.println("You lose");
+                return;
+            }
+        }while(sum != point);
+
+        System.out.println("You win");
+    }
+
+    public static int throwDice() {
+        return (int) (Math.random() * 6 + 1);
+    }
 
 }
