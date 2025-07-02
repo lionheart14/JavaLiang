@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        passwordTest();
+        palindromicPrime();
     }
     /**
      * 6.1
@@ -214,7 +213,37 @@ public class Exercises {
         return true;
     }
 
-    
-    //TODO: 6.26, 6.30 
+    /**
+     * 6.26
+     */
+    public static void palindromicPrime() {
+        int count = 0;
+        int number = 2;
+        while(count < 120) {
+            if(isPrime(number) && isPalindrome(number)) {
+                System.out.print(number + " ");
+                count++;
+
+                // Zeilenumbruch wenn 10 in einer Zeile
+                if(count % 10 == 0) {
+                    System.out.println();
+                }
+            }
+            number++;
+        }
+    }
+
+
+    public static boolean isPrime(int number) {
+        for(int i = 2; i < number; i++) {
+            if(number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    //TODO: 6.30 
 
 }
