@@ -47,4 +47,40 @@ public class Exercises {
             System.out.printf("Student %d score is %d and grade is %c \n", i, scores[i], grades[i]);
         }
     }
+
+    /**
+     * 7.9
+     */
+
+    /**
+     * 7.10
+     */
+
+    /**
+     * 7.12
+     */
+
+    /**
+     * 7.11
+     */
+
+    /**
+     * 7.18
+     */
+
+    /**
+     * 7.19
+     */
+
+    /**
+     * 7.15
+     */
+
+    /**
+     * 7.31
+     */
+
+    /**
+     * 7.32
+     */
 }
