@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        assignGrades();
+        max();
     }
 
     /**
@@ -51,6 +51,23 @@ public class Exercises {
     /**
      * 7.9
      */
+    public static void max() {
+        Scanner input = new Scanner(System.in);
+        double[] array = new double[10];
+        System.out.println("Enter ten numbers: ");
+        for(int i = 0; i < array.length; i++) {
+            array[i] = input.nextDouble(); 
+        }
+
+        double max = 0;
+        for (double d : array) {
+            if(d > max) {
+                max = d;
+            }
+        }
+
+        System.out.println("The maximum number is: " + max);
+    }
 
     /**
      * 7.10
