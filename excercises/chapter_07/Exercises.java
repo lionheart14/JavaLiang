@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        max();
+        prompt();
     }
 
     /**
@@ -51,14 +51,19 @@ public class Exercises {
     /**
      * 7.9
      */
-    public static void max() {
+
+    public static void prompt() {
         Scanner input = new Scanner(System.in);
+        System.out.print("Enter ten numbers: ");
         double[] array = new double[10];
-        System.out.println("Enter ten numbers: ");
         for(int i = 0; i < array.length; i++) {
             array[i] = input.nextDouble(); 
         }
 
+        System.out.println("The maximum number is: " + max(array));
+    }
+
+    public static double max(double[] array) {
         double max = 0;
         for (double d : array) {
             if(d > max) {
@@ -66,12 +71,23 @@ public class Exercises {
             }
         }
 
-        System.out.println("The maximum number is: " + max);
+        return max;
     }
 
     /**
      * 7.10
      */
+    public static int indexOfLargestElement(double[] array) {
+        int index = 0;
+        double max = max(array);
+
+        for(int i = 0; i < array.length; i++) {
+            if(max == array[i]) {
+                index = i;
+            }
+        }
+        return index;
+    }
 
     /**
      * 7.12
