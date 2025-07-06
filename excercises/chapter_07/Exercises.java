@@ -1,5 +1,6 @@
 package excercises.chapter_07;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercises {
@@ -60,7 +61,8 @@ public class Exercises {
             array[i] = input.nextDouble(); 
         }
 
-        System.out.println("The maximum number is: " + max(array));
+        System.out.println("The reversed array is: " + Arrays.toString(reverseA(array)));
+        // System.out.println("The maximum number is: " + max(array));
     }
 
     public static double max(double[] array) {
@@ -92,6 +94,13 @@ public class Exercises {
     /**
      * 7.12
      */
+    public static double[] reverseA(double[] array) {
+        double[] reversedArray = new double[array.length];
+        for(int i = 0; i < array.length; i++) {
+            reversedArray[i] = array[array.length - 1 - i];
+        }
+        return reversedArray;
+    }
 
     /**
      * 7.11
