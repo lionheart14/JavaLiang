@@ -61,7 +61,9 @@ public class Exercises {
             array[i] = input.nextDouble(); 
         }
 
-        System.out.println("The reversed array is: " + Arrays.toString(reverseA(array)));
+        System.out.println("The mean is " + mean(array));
+        System.out.println("The standard deviation is " + deviation(array));
+        // System.out.println("The reversed array is: " + Arrays.toString(reverseA(array)));
         // System.out.println("The maximum number is: " + max(array));
     }
 
@@ -105,6 +107,22 @@ public class Exercises {
     /**
      * 7.11
      */
+    public static double deviation(double[] x) {
+        double deviation = 0;
+        for (double d : x) {
+            deviation += Math.pow(d - mean(x), 2);
+        }
+        return Math.sqrt(deviation / (x.length - 1));
+    }
+
+    public static double mean(double[] x) {
+        double mean = 0;
+        for (double d : x) {
+            mean += d;
+        }
+        return mean / x.length;
+    }
+
 
     /**
      * 7.18
