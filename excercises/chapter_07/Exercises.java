@@ -61,8 +61,9 @@ public class Exercises {
             array[i] = input.nextDouble(); 
         }
 
-        System.out.println("The mean is " + mean(array));
-        System.out.println("The standard deviation is " + deviation(array));
+        System.out.println("Sorted array is: " + Arrays.toString(bubbleSort(array)));
+        // System.out.println("The mean is " + mean(array));
+        // System.out.println("The standard deviation is " + deviation(array));
         // System.out.println("The reversed array is: " + Arrays.toString(reverseA(array)));
         // System.out.println("The maximum number is: " + max(array));
     }
@@ -127,10 +128,35 @@ public class Exercises {
     /**
      * 7.18
      */
+    public static double[] bubbleSort(double[] n) {
+        double[] s = n.clone();
+        boolean comparison = true;
+
+        while(comparison == true) {
+            comparison = false;
+            for(int i = 0; i < n.length - 1; i++) {
+                if(s[i] < s[i + 1]) {
+                    double temp = s[i];
+                    s[i] = s[i + 1];
+                    s[i + 1] = temp;
+                    comparison = true;
+                }
+            }
+        }
+        return s;
+    }
 
     /**
      * 7.19
      */
+    public static boolean isSorted(int[] list) {
+        for(int i = 1; i < list[0]; i++) {
+            if(list[i] < list[i + 1]) {
+                return false;
+            } 
+        }
+        return true;
+    }
 
     /**
      * 7.15
