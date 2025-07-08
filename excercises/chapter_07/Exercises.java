@@ -56,12 +56,13 @@ public class Exercises {
     public static void prompt() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter ten numbers: ");
-        double[] array = new double[10];
+        int[] array = new int[10];
         for(int i = 0; i < array.length; i++) {
-            array[i] = input.nextDouble(); 
+            array[i] = input.nextInt(); 
         }
 
-        System.out.println("Sorted array is: " + Arrays.toString(bubbleSort(array)));
+        System.out.println("The distinct numbers are: " + Arrays.toString(eliminateDuplicates(array)));
+        // System.out.println("Sorted array is: " + Arrays.toString(bubbleSort(array)));
         // System.out.println("The mean is " + mean(array));
         // System.out.println("The standard deviation is " + deviation(array));
         // System.out.println("The reversed array is: " + Arrays.toString(reverseA(array)));
@@ -161,6 +162,25 @@ public class Exercises {
     /**
      * 7.15
      */
+    public static int[] eliminateDuplicates(int[] list) {
+        int[] returnList = new int[list.length];
+        boolean duplicate = false;
+        for(int i = 0; i < list.length; i++) {
+            for (int n : returnList) {
+                if(list[i] == n) {
+                    duplicate = true;
+                    break;
+                }
+            }
+
+            if(duplicate == false) {
+                returnList[i] = list[i];
+            }
+
+            duplicate = false;
+        }
+        return returnList;
+    }
 
     /**
      * 7.31
