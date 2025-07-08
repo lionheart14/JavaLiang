@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        prompt();
+        mergeTest();
     }
 
     /**
@@ -147,6 +147,24 @@ public class Exercises {
         return s;
     }
 
+    public static int[] bubbleSort(int[] n) {
+        int[] s = n.clone();
+        boolean comparison = true;
+
+        while(comparison == true) {
+            comparison = false;
+            for(int i = 0; i < n.length - 1; i++) {
+                if(s[i] < s[i + 1]) {
+                    int temp = s[i];
+                    s[i] = s[i + 1];
+                    s[i + 1] = temp;
+                    comparison = true;
+                }
+            }
+        }
+        return s;
+    }
+
     /**
      * 7.19
      */
@@ -184,7 +202,53 @@ public class Exercises {
 
     /**
      * 7.31
-     */
+     */ 
+    public static void mergeTest() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter list1 size and contents: ");
+        int listSize1 = input.nextInt();
+        int[] list1 = new int[listSize1];
+        for(int i = 0; i < listSize1; i++) {
+            list1[i] = input.nextInt();
+        }
+
+        System.out.print("Enter list2 size and contents: ");
+        int listSize2 = input.nextInt();
+        int[] list2 = new int[listSize2];
+        for(int i = 0; i < listSize2; i++) {
+            list2[i] = input.nextInt();
+        }
+
+        System.out.println("list1 is " + Arrays.toString(list1));
+        System.out.println("list2 is " + Arrays.toString(list2));
+
+        System.out.println("The merged list is " + Arrays.toString(merge(list1, list2)));
+    }
+    
+    public static int[] merge(int[] list1, int[] list2) {
+        int[] sList1 = bubbleSort(list1);
+        int[] sList2 = bubbleSort(list2);
+        int[] mergedList = new int[sList1.length + sList2.length];
+
+        for(int i = 0; i < mergedList.length; i++) {
+            if(sList1[0] <= sList2[0]) {
+                mergedList[i] = sList1[0];
+                queue(sList1);
+            } else {
+                mergedList[i] = sList2[0];
+                queue(sList2);
+            }
+        }
+
+        return mergedList;
+    }
+
+    public static void queue(int[] list) {
+        for(int i = 0; i < list.length - 1; i++) {
+            list[i] = list[i + 1];
+        }
+    }
+
 
     /**
      * 7.32
