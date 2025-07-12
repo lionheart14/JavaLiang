@@ -225,6 +225,7 @@ public class Exercises {
         System.out.println("The merged list is " + Arrays.toString(merge(list1, list2)));
     }
     
+    // solve with 3 pointers 
     public static int[] merge(int[] list1, int[] list2) {
         int[] sList1 = bubbleSort(list1);
         int[] sList2 = bubbleSort(list2);
@@ -253,4 +254,37 @@ public class Exercises {
     /**
      * 7.32
      */
+    public static void partitionTest() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the list size: ");
+        int listSize = input.nextInt();
+        System.out.print("Enter list content: ");
+        int[] list = new int[listSize];
+        for(int i = 0; i < listSize; i++) {
+            list[i] = input.nextInt();
+        }
+
+        System.out.print("After the partition, the list is ");
+
+    }
+
+    //zwei pointer ansatz
+    public static int partition(int[] list) {
+            int pivot = list[0];
+            int newListIndexLeft = 0;
+            int newListIndexRight = list.length - 1;
+            for(int i = 1; i < list.length; i++) {
+                int temp = list[i];
+                if(list[i] <= pivot) {
+                    temp = list[newListIndexLeft];
+                    list[newListIndexLeft] = list[i];
+                    newListIndexLeft++;
+                } else {
+                    newList[newListIndexRight] = list[i];
+                    newListIndexRight--;
+                }
+            }
+            newList[newListIndexLeft] = pivot;
+            return newListIndexLeft;
+    }
 }
