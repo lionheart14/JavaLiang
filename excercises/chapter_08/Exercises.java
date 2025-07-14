@@ -106,4 +106,52 @@ public class Exercises {
         list[index] = 99;
         return smallestNumber;
     }
+
+    /**
+     * 8.6
+     */
+    public static double[][] mulitplyMatrix(double [][] a, double[][] b) {
+        double[][] matrix = new double[a.length][a.length];
+
+        if(a.length != b[0].length) {
+            throw new IllegalArgumentException();
+        }
+
+        for(int i = 0; i < matrix.length; i++) {
+            for(int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = a[i][1] * b[1][j] + a[i][2] * b[2][j] + a[i][3] * b[3][j];
+            }
+        }
+
+        return matrix;
+    }
+
+    public static void testMultiplyMatrix() {
+        Scanner input = new Scanner(System.in);
+        final int MATRIX_SIZE = 3;
+        double[][] a = new double[MATRIX_SIZE][MATRIX_SIZE];
+        double[][] b = new double[MATRIX_SIZE][MATRIX_SIZE];
+
+        System.out.print("Enter matrix1: ");
+        for(int i = 0; i < MATRIX_SIZE; i++) {
+            for(int j = 0; j < MATRIX_SIZE; j++) {
+                a[i][j] = input.nextDouble();
+            }
+        }
+
+        System.out.print("Enter matrix2: ");
+        for(int i = 0; i < MATRIX_SIZE; i++) {
+            for(int j = 0; j < MATRIX_SIZE; j++) {
+                b[i][j] = input.nextDouble();
+            }
+        }
+
+        double[][] matrix = mulitplyMatrix(a, b);
+
+        System.out.println("The mulitplication of the matrices is");
+        System.out.printf("%f %f %f       %f %f %f      %f %f %f\n" + 
+                          "%f %f %f   *   %f %f %f   =  %f %f %f\n" +
+                          "%f %f %f       %f %f %f      %f %f %f\n", a[0][0], a[0][1], a[0][2], );
+    }
+
 }
