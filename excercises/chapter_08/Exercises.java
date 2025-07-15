@@ -149,9 +149,24 @@ public class Exercises {
         double[][] matrix = mulitplyMatrix(a, b);
 
         System.out.println("The mulitplication of the matrices is");
-        System.out.printf("%f %f %f       %f %f %f      %f %f %f\n" + 
-                          "%f %f %f   *   %f %f %f   =  %f %f %f\n" +
-                          "%f %f %f       %f %f %f      %f %f %f\n", a[0][0], a[0][1], a[0][2], );
+        // System.out.printf("%f %f %f       %f %f %f      %f %f %f\n" + 
+        //                   "%f %f %f   *   %f %f %f   =  %f %f %f\n" +
+        //                   "%f %f %f       %f %f %f      %f %f %f\n", a[0][0], a[0][1], a[0][2], );
+    }
+
+    /**
+     * 8.7
+     * darauf achten pointer system mit 2 pointers in diesem fall zu verwendne die for schliefne sind teilweise hier redundant
+     */
+    public static double[][] nearestPoint(double[][] points) {
+        double[][] nearestPoints = new double[2][3];
+        double distance = 0;
+
+        for(int i = 0; i < points.length; i++) {
+            for(int n = 0; n < points[i].length; n++) {
+                if(Math.sqrt(Math.pow(points[i], 2)))
+            }
+        }
     }
 
 }
