@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        headsAndTails(7);
+        testLocateSmallest();
     }
     /**
      * 8.1
@@ -259,5 +259,41 @@ public class Exercises {
                 System.out.println();
             }
         }
+    }
+
+    /**
+     * 8.13
+     */
+    public static void testLocateSmallest() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number and rows and columns of the array: ");
+        int rows = input.nextInt();
+        int columns = input.nextInt();
+        double[][] matrix = new double[rows][columns];
+
+        System.out.println("Enter the array: ");
+        for(int i = 0; i < rows; i++) {
+            for(int j = 0; j < columns; j++) {
+                matrix[i][j] = input.nextDouble();
+            }
+        }
+
+        int[] index = locateSmallest(matrix);
+
+        System.out.printf("The location of the smallest element is at (%d, %d)", index[0], index[1]);
+    }
+    public static int[] locateSmallest(double[][] a) {
+        double smallestElement = a[0][0];
+        int[] smallestIndex = new int[2];
+        for(int i = 0; i < a.length; i++) {
+            for(int j = 0; j < a[i].length; j++) {
+                if(a[i][j] < smallestElement) {
+                    smallestElement = a[i][j];
+                    smallestIndex[0] = i;
+                    smallestIndex[1] = j;
+                }
+            }
+        }
+        return smallestIndex;
     }
 }
