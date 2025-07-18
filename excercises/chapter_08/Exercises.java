@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        largestRowAndColumn();
+        headsAndTails(7);
     }
     /**
      * 8.1
@@ -232,4 +232,32 @@ public class Exercises {
         System.out.println("The largest column index: " + columnIndex);
     }
 
+    /**
+     * 8.11
+     */
+    public static void headsAndTails(int n) {
+        if(n < 0 || n > 511) {
+            throw new IllegalArgumentException("number has to be between 0 and 511");
+        }
+
+        String binary = Integer.toBinaryString(n);
+
+        while(binary.length() != 9) {
+            binary = '0' + binary;
+        }
+
+        int spaceIntervall = 0;
+        for(int i = 0; i < binary.length(); i++)  {
+            if(binary.charAt(i) == '0') {
+                System.out.print("H ");
+            } else {
+                System.out.print("T ");
+            }
+            spaceIntervall++;
+
+            if(spaceIntervall % 3 == 0) {
+                System.out.println();
+            }
+        }
+    }
 }
