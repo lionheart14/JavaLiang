@@ -269,22 +269,22 @@ public class Exercises {
     }
 
     //zwei pointer ansatz
-    public static int partition(int[] list) {
-            int pivot = list[0];
-            int newListIndexLeft = 0;
-            int newListIndexRight = list.length - 1;
-            for(int i = 1; i < list.length; i++) {
-                int temp = list[i];
-                if(list[i] <= pivot) {
-                    temp = list[newListIndexLeft];
-                    list[newListIndexLeft] = list[i];
-                    newListIndexLeft++;
-                } else {
-                    newList[newListIndexRight] = list[i];
-                    newListIndexRight--;
-                }
-            }
-            newList[newListIndexLeft] = pivot;
-            return newListIndexLeft;
-    }
+    // public static int partition(int[] list) {
+    //         int pivot = list[0];
+    //         int newListIndexLeft = 0;
+    //         int newListIndexRight = list.length - 1;
+    //         for(int i = 1; i < list.length; i++) {
+    //             int temp = list[i];
+    //             if(list[i] <= pivot) {
+    //                 temp = list[newListIndexLeft];
+    //                 list[newListIndexLeft] = list[i];
+    //                 newListIndexLeft++;
+    //             } else {
+    //                 newList[newListIndexRight] = list[i];
+    //                 newListIndexRight--;
+    //             }
+    //         }
+    //         newList[newListIndexLeft] = pivot;
+    //         return newListIndexLeft;
+    // }
 }

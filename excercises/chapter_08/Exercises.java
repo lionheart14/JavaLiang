@@ -1,10 +1,11 @@
 package excercises.chapter_08;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        displayEmployees();
+        largestRowAndColumn();
     }
     /**
      * 8.1
@@ -167,6 +168,68 @@ public class Exercises {
                 if(Math.sqrt(Math.pow(points[i], 2)))
             }
         }
+    }
+
+    /**
+     * 8.8
+     */
+    public static void largestRowAndColumn() {
+        int MATRIX_SIZE = 5;
+        int [][] matrix = new int[MATRIX_SIZE][MATRIX_SIZE];
+        
+
+        for(int i = 0; i < MATRIX_SIZE; i++) {
+            for(int j = 0; j < MATRIX_SIZE; j++) { 
+                int num =  (Math.random() * 1) > 0.5 ? 1 : 0;
+                matrix[i][j] = num;
+            }
+        }
+
+        int rowCnt = 0;
+        int rowIndex = 0;
+        for(int i = 0; i < MATRIX_SIZE; i++) {
+            int currentCnt = 0;
+            for(int j = 0; j < MATRIX_SIZE; j++) {
+                if(matrix[i][j] == 1) {
+                    currentCnt++;
+                }
+            }
+            if(currentCnt > rowCnt)  {
+                    rowCnt = currentCnt;
+                    rowIndex = i;
+            }
+        }
+
+        int columnCnt = 0;
+        int columnIndex = 0;
+        for(int i = 0; i < MATRIX_SIZE; i++) {
+            int currentCnt = 0;
+            for(int j = 0; j < MATRIX_SIZE; j++) {
+                if(matrix[j][i] == 1) {
+                    currentCnt++;
+                }
+            }
+            if(currentCnt > columnCnt)  {
+                    columnCnt = currentCnt;
+                    columnIndex = i;
+            }
+        }
+
+        for(int i = 0; i < MATRIX_SIZE; i++) {
+            int spaceIntervall = 0;
+            for(int j = 0; j < MATRIX_SIZE; j++) {
+                System.out.print(matrix[i][j]);
+                spaceIntervall++;
+
+                if(spaceIntervall == 5) {
+                    System.out.println();
+                    spaceIntervall = 0;
+                }
+            }
+        }
+
+        System.out.println("The largest row index: " + rowIndex);
+        System.out.println("The largest column index: " + columnIndex);
     }
 
 }
