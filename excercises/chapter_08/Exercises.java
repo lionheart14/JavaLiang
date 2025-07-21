@@ -342,12 +342,12 @@ public class Exercises {
             int cnt = 0;
             int value = -1;
             for(int column = 0; column < values[row].length; column++) {
-                
-                for(cnt = 0; cnt < 4; cnt++) {
-                    if(values[row++][column]) {
 
-                    }
-                }
+                // for(cnt = 0; cnt < 4; cnt++) {
+                //     if(values[row++][column]) {
+
+                //     }
+                // }
             }
         }
     }
