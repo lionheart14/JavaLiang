@@ -296,4 +296,59 @@ public class Exercises {
         }
         return smallestIndex;
     }
+
+    /**
+     * 8.19
+     */
+    public static boolean isConsecutiveFour(int[][] values) {
+        //horizontal
+        for(int row = 0; row < values.length; row++) {
+            int cnt = 0;
+            int value = -1;
+            for(int column = 0; column < values[row].length; column++) {
+                if(cnt == 4) {
+                    return true;
+                }
+
+                if(value == values[row][column]) {
+                    cnt++;
+                } else {
+                    value = values[row][column];
+                    cnt = 1;
+                }
+            }
+        }
+
+        //vertical
+        for(int column = 0; column < values.length; column++) {
+            int cnt = 0;
+            int value = -1;
+            for(int row = 0; row < values[column].length; column++) {
+                if(cnt == 4) {
+                    return true;
+                }
+
+                if(value == values[row][column]) {
+                    cnt++;
+                } else {
+                    value = values[row][column];
+                    cnt = 1;
+                }
+            }
+        }
+
+        //diagonal
+        for(int row = 0; row < values.length; row++) {
+            int cnt = 0;
+            int value = -1;
+            for(int column = 0; column < values[row].length; column++) {
+                
+                for(cnt = 0; cnt < 4; cnt++) {
+                    if(values[row++][column]) {
+
+                    }
+                }
+            }
+        }
+    }
 }
