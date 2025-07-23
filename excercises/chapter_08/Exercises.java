@@ -404,4 +404,23 @@ public class Exercises {
             }
         }
     }
+
+    /**
+    *8.23 (Game: find the flipped cell)
+    * -> Perfekt, um reines logisches Denken zu üben.
+    */
+
+    //in datei
+
+    /**
+    *8.36 (Latin square)
+    * -> Fordert dich, komplexe Regeln für Zeilen und Spalten zu prüfen.
+    */
+
+    /**
+    *8.35 (Largest block)
+    * -> Eine echte Herausforderung für Fortgeschrittene.
+    */
+
+        
 }
