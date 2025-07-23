@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Exercises {
     public static void main(String[] args) {
-        testLocateSmallest();
+        centralCity();
     }
     /**
      * 8.1
@@ -348,6 +348,59 @@ public class Exercises {
 
                 //     }
                 // }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * 8.21
+     */
+    public static void centralCity() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of cities: ");
+        int n = input.nextInt();
+
+        System.out.println("Enter the coordinates of the cities: ");
+        double[][] coordinates = new double[n][2];
+        for(int r = 0; r < coordinates.length; r++) {
+            for(int c = 0; c < coordinates[r].length; c++) {
+                coordinates[r][c] = input.nextDouble();
+            }
+        }
+
+        double minDistanceV = Double.MAX_VALUE;
+        double minIndexV;
+        for(int r = 0; r < coordinates.length; r++) {
+            double distance = 0;
+            double element = coordinates[r][0];
+            for(int i = 0; i < coordinates.length; i++) {
+                if(r == i) continue;
+
+                distance += Math.abs(element - coordinates[i][0]);
+
+                if(distance < minDistanceV) {
+                    minDistanceV = distance;
+                    minIndexV = r; 
+                }
+            }
+        }
+
+        double minDistanceH = Double.MAX_VALUE;
+        double minIndexH;
+        for(int r = 0; r < coordinates.length; r++) {
+            double distance = 0;
+            double element = coordinates[r][1];
+            for(int i = 0; i < coordinates.length; i++) {
+                if(r == i) continue;
+
+                distance += Math.abs(element - coordinates[i][0]);
+
+                if(distance < minDistanceH) {
+                    minDistanceH = distance;
+                    minIndexH = r; 
+                }
             }
         }
     }
