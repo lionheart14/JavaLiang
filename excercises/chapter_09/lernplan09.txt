@@ -1,0 +1,5 @@
+Block 1 (9.1, 9.8, 9.7): Lerne, wie man eine Klasse grundsätzlich aufbaut.
+
+Block 2 (9.5, 9.4): Lerne, fertige Werkzeuge aus der Java-API zu nutzen.
+
+Block 3 (9.6, 9.10, 9.11, 9.12, 9.13): Kombiniere alles, um komplexere, praxisnahe Probleme zu lösen und Klassen wiederzuverwenden.
