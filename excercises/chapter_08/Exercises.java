@@ -88,10 +88,10 @@ public class Exercises {
         }
 
         //TODO: too complicated, find easier solutions
-        for(int i = 0; i < employees.length; i++) {
-            int n = findSmallestInt(totalHours);
-            System.out.println("Employee " + i + " total working hours: " + sum);
-        }
+        // for(int i = 0; i < employees.length; i++) {
+        //     int n = findSmallestInt(totalHours);
+        //     System.out.println("Employee " + i + " total working hours: " + sum);
+        // }
 
     }
 
@@ -159,16 +159,16 @@ public class Exercises {
      * 8.7
      * darauf achten pointer system mit 2 pointers in diesem fall zu verwendne die for schliefne sind teilweise hier redundant
      */
-    public static double[][] nearestPoint(double[][] points) {
-        double[][] nearestPoints = new double[2][3];
-        double distance = 0;
+    // public static double[][] nearestPoint(double[][] points) {
+    //     double[][] nearestPoints = new double[2][3];
+    //     double distance = 0;
 
-        for(int i = 0; i < points.length; i++) {
-            for(int n = 0; n < points[i].length; n++) {
-                if(Math.sqrt(Math.pow(points[i], 2)))
-            }
-        }
-    }
+    //     for(int i = 0; i < points.length; i++) {
+    //         for(int n = 0; n < points[i].length; n++) {
+    //             if(Math.sqrt(Math.pow(points[i], 2)))
+    //         }
+    //     }
+    // }
 
     /**
      * 8.8
