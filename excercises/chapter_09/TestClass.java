@@ -45,8 +45,5 @@ public class TestClass {
 
         a1.withdraw(2500);
         a1.deposit(3000);
-
-        
-        
     }
 }   
