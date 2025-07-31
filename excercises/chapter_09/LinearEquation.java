@@ -3,13 +3,13 @@ package excercises.chapter_09;
 public class LinearEquation {
     private double a, b, c, d, e, f;
 
-    public LinearEquation(double a, double b, double c, double d, double e, double f) {
+    public LinearEquation(double a, double b, double c, double d) {
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
-        this.e = e;
-        this.f = f;
+        e = a * getX() + b * getY();
+        f = c * getX() + d * getY();
     }
 
     public double getX() {

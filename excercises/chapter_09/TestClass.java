@@ -117,4 +117,17 @@ public class TestClass {
             System.out.println("The equation has no roots.");
         }
     }
+
+    //todo
+    public static void intersectingPoint() {
+        Scanner input = new Scanner(System.in);
+        double[] points = new double[8];
+        System.out.print("Enter 8 numbers accordingly to points: ");
+        for(int i = 0; i < points.length; i++) {
+            points[i] = input.nextDouble();
+        }
+
+        LinearEquation le = new LinearEquation(0, 0, 0, 0)
+
+    }
 }   
