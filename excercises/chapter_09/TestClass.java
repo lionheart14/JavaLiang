@@ -1,8 +1,10 @@
 package excercises.chapter_09;
 
+import java.util.Random;
+
 public class TestClass {
     public static void main(String[] args) {
-        testFan();
+        testStopWatch();
     }
 
     public static void testRectangle() {
@@ -45,5 +47,54 @@ public class TestClass {
 
         a1.withdraw(2500);
         a1.deposit(3000);
+    }
+
+    public static void testStopWatch() {
+        Random random = new Random();
+        int[] numbers = new int[100000];
+        for(int i = 0; i < numbers.length; i++) {
+            numbers[i] = random.nextInt(100000);
+        }
+
+        for(int i = 0; i < 100; i++) {
+            System.out.print(numbers[i] + " ");
+
+            if(i % 10 == 0) {
+                System.out.println();
+            } 
+        }
+
+        StopWatch sp = new StopWatch();
+        selectionSort(numbers);
+        sp.stop();
+
+        for(int i = 0; i < 100; i++) {
+            System.out.print(numbers[i] + " ");
+
+            if(i % 10 == 0) {
+                System.out.println();
+            } 
+        }
+        
+        System.out.println(sp.getElapsedTime());
+    }
+
+    public static void selectionSort(int[] numbers) {
+        int min;
+        int minIndex;
+        int temp;
+        for(int i = 0; i < numbers.length; i++) {
+            min = numbers[i];
+            minIndex = i;
+            for(int j = i; j < numbers.length; j++) {
+                if(numbers[j] < min) {
+                    min = numbers[j];
+                    minIndex = j;
+                }
+            }
+            temp = numbers[i];
+            numbers[i] = min;
+            numbers[minIndex] = temp;
+        }
     }
 }   

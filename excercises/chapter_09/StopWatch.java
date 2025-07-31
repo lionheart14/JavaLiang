@@ -3,14 +3,22 @@ package excercises.chapter_09;
 import java.util.Date;
 
 public class StopWatch {
-    private Date startTime;
-    private Date endTime;
+    private long startTime;
+    private long endTime;
 
     public StopWatch() {
-
+        this.start();
     }
 
-    public start() {
-        startTime = 
+    public void start() {
+        startTime = System.nanoTime();
+    }
+
+    public void stop() {
+        endTime = System.nanoTime();
+    }
+
+    public long getElapsedTime() {
+        return endTime - startTime;
     }
 }
