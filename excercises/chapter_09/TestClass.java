@@ -1,10 +1,11 @@
 package excercises.chapter_09;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class TestClass {
     public static void main(String[] args) {
-        testStopWatch();
+        testQuadraticEquation();
     }
 
     public static void testRectangle() {
@@ -95,6 +96,25 @@ public class TestClass {
             temp = numbers[i];
             numbers[i] = min;
             numbers[minIndex] = temp;
+        }
+    }
+
+    public static void testQuadraticEquation() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter values for a, b, c: ");
+        double a = input.nextDouble();
+        double b = input.nextDouble();
+        double c = input.nextDouble();
+
+        QuadraticEquation qe = new QuadraticEquation(a, b, c);
+        double discriminant = qe.getDiscriminant();
+
+        if(discriminant > 0) {
+            System.out.printf("Root 1: %f | Root 2: %f\n", qe.getRoot1(), qe.getRoot2());
+        } else if(discriminant == 0) {
+            System.out.printf("Root 1: %f\n", qe.getRoot1());
+        } else {
+            System.out.println("The equation has no roots.");
         }
     }
 }   
