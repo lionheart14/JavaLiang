@@ -1,11 +1,12 @@
 package excercises.chapter_09;
 
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class Exercises {
     public static void main(String[] args) {
-        random();
+        date();
     }
 
     /**
@@ -27,5 +28,15 @@ public class Exercises {
         for(int i = 0; i < 50; i++) {
             System.out.println(r.nextInt(100));
         }
+    }
+
+    /**
+     * 9.3
+     */
+    public static void date() {
+        Date date = new Date();
+        date.setTime(0);
+        System.out.println(date.getTime());
+        System.out.println(date.toString());
     }
 }
