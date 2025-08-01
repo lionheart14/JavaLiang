@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class TestClass {
     public static void main(String[] args) {
-        testQuadraticEquation();
+        locationTest();
     }
 
     public static void testRectangle() {
@@ -118,7 +118,6 @@ public class TestClass {
         }
     }
 
-    //todo
     public static void intersectingPoint() {
         Scanner input = new Scanner(System.in);
         double[] points = new double[8];
@@ -127,7 +126,31 @@ public class TestClass {
             points[i] = input.nextDouble();
         }
 
-        LinearEquation le = new LinearEquation(0, 0, 0, 0)
+        LinearEquation le1 = new LinearEquation(points[0], points[1], points[2], points[3]);
+        LinearEquation le2 = new LinearEquation(points[4], points[5], points[6], points[7]);
+        LinearEquation intersectingPoint = new LinearEquation(le1.getX(), le1.getY(), le2.getX(), le2.getY());
+        //kein bock auf mathe
+    }
 
+    public static void locationTest() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of rows and columns in the array: ");
+        int rows = input.nextInt();
+        int columns = input.nextInt();
+        double[][] matrix = new double[rows][columns];
+
+        System.out.println("Enter the array: ");
+        for(int row = 0; row < rows; row++) {
+            for(int column = 0; column < columns; column++) {
+                matrix[row][column] = input.nextDouble();
+            }
+        }
+        Location l = locateLargest(matrix);
+        System.out.printf("The location fo the largest element is %f.0 at (%d, %d)", l.getMaxValue(), l.getRow(), l.getColumn());
+    }
+
+    public static Location locateLargest(double[][] a) {
+        Location l = new Location(a);
+        return l;
     }
 }   
