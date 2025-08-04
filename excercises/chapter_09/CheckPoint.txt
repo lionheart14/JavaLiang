@@ -1,0 +1,5 @@
+- 10.10.3
+String s1 = "Welcome to Java";
+String s2 = s1.replace("o", "abc");
+System.out.println(s1); // Welcome to Java
+System.out.println(s2); // Welcabcme tabc Java
