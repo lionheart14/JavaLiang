@@ -6,7 +6,7 @@ import excercises.chapter_09.Account;
 
 public class TestClass {
     public static void main(String[] args) {
-        ATMMachine();
+        taxTest();
     }
 
     public static void timeTest() {
@@ -68,7 +68,19 @@ public class TestClass {
                     case 4: exit = true;
                 }
             }
-        }
-        
+        }  
     } 
+
+    public static void taxTest() {
+        for(int filingStatus = 0; filingStatus < 4; filingStatus++) {
+            int income = 50000;
+            System.out.print("Filing status " + filingStatus + ": ");
+            for(int interval = 0; interval < 10; interval++) {
+                Tax tax = new Tax(filingStatus, income);
+                System.out.print(tax.getTax() + " ");
+                income += 1000;
+            }
+            System.out.println();
+        }
+    }
 }
