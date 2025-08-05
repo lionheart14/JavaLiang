@@ -17,8 +17,8 @@ public class MyInteger {
 
     public boolean isPrime() {
         if(value <= 1) return false;
-        if(isEven()) return false;
         if(value == 2) return true;
+        if(isEven()) return false;
 
         for(int i = 3; i < Math.sqrt(value); i += 2) {
             if(value % i == 0) return false;
@@ -45,8 +45,8 @@ public class MyInteger {
 
     public static boolean isPrime(int value) {
         if(value <= 1) return false;
-        if(value % 2 == 0) return false;
         if(value == 2) return true;
+        if(value % 2 == 0) return false;
 
         for(int i = 3; i < Math.sqrt(value); i += 2) {
             if(value % i == 0) return false;
