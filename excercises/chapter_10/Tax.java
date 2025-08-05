@@ -22,14 +22,12 @@ public class Tax {
     }
 
     public double getTax() {
-        for(int bracket = 4; bracket >= 0; bracket--) {
-            if(taxableIncome < brackets[filingStatus][bracket]) {
-                continue;
-            } else {
+        for (int bracket = 0; bracket < 5; bracket++) {
+            if (taxableIncome <= brackets[filingStatus][bracket]) {
                 return taxableIncome * rates[bracket];
             }
-        }
-        return 0;
+    }
+        return taxableIncome * rates[4];
     }
 
     private void initialiseBracketsFor2001() {

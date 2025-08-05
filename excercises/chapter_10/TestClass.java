@@ -6,7 +6,7 @@ import excercises.chapter_09.Account;
 
 public class TestClass {
     public static void main(String[] args) {
-        taxTest();
+        queueTest();
     }
 
     public static void timeTest() {
@@ -77,10 +77,25 @@ public class TestClass {
             System.out.print("Filing status " + filingStatus + ": ");
             for(int interval = 0; interval < 10; interval++) {
                 Tax tax = new Tax(filingStatus, income);
-                System.out.print(tax.getTax() + " ");
+                System.out.printf("%-10.2f ", tax.getTax());
                 income += 1000;
             }
             System.out.println();
         }
+    }
+
+    public static void queueTest() {
+        Queue q = new Queue();
+        for(int i = 0; i <= 20; i++) {
+            q.enqueue(i);
+            System.out.println(q.getElements()[i]);
+        }
+
+        for(int i = 0; i <= 20; i++) {
+            System.out.println(q.dequeue());
+        }
+
+        System.out.println(q.empty());
+
     }
 }
