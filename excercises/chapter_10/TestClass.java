@@ -6,7 +6,7 @@ import excercises.chapter_09.Account;
 
 public class TestClass {
     public static void main(String[] args) {
-        circle2DTest();
+        myDateTest();
     }
 
     public static void timeTest() {
@@ -105,5 +105,10 @@ public class TestClass {
         System.out.println(c1.contains(3, 3));
         System.out.println(c1.contains(new Circle2D(4, 5, 10.5)));
         System.out.println(c1.overlaps(new Circle2D(3, 5, 2.3)));
+    }
+
+    public static void myDateTest() {
+        MyDate md = new MyDate();
+        System.out.println(md);
     }
 }
