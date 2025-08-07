@@ -6,13 +6,28 @@ public class Circle2D {
     private double radius;
 
     public Circle2D() {
-        this(0,0,1)
+        this(0,0,1);
     }
 
     public Circle2D(double x, double y, double radius) {
         this.x = x;
         this.y = y;
         this.radius = radius;
+    }
+
+    public boolean contains(double x, double y) {
+        double d = Math.sqrt(Math.pow(x - this.getX(), 2) + Math.pow(y - this.getY(), 2));
+        return d <= this.getRadius();
+    }
+
+    public boolean contains(Circle2D circle) {
+        double d = Math.sqrt(Math.pow(circle.getX() - this.getX(), 2) + Math.pow(circle.getY() - this.getY(), 2));
+        return d + circle.getRadius() <= this.getRadius();
+    }
+
+    public boolean overlaps(Circle2D circle) {
+        double d = Math.sqrt(Math.pow(circle.getX() - this.getX(), 2) + Math.pow(circle.getY() - this.getY(), 2));
+        return d <= circle.getRadius() + this.getRadius();
     }
 
     public double getArea() {
