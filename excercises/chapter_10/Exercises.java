@@ -7,7 +7,7 @@ import excercises.chapter_10.MyInteger;
 
 public class Exercises {
     public static void main(String[] args) {
-        divisibleBy2Or3();
+        findSquareNumbers();
     }
 
     public static void displayPrimeNumbers() {
@@ -23,6 +23,7 @@ public class Exercises {
         }
     }
 
+    //10.16
     public static void divisibleBy2Or3() {
         BigInteger num = new BigInteger("50000000000000000000000000000000000000000000000000");
         final BigInteger ZERO = new BigInteger("0");
@@ -37,6 +38,19 @@ public class Exercises {
                 numberOfDivisibles++;
             }
             num = num.add(ONE);
-        }
+        }   
+    }
+
+    //10.17
+    public static void findSquareNumbers() {
+        String s = String.format("%d", Math.round(Math.sqrt(Long.MAX_VALUE)));
+        BigInteger num = new BigInteger(s);
+        int numberOfSquareNumbers = 0;
+
+        while(numberOfSquareNumbers < 10) {
+            System.out.println(num.multiply(num));
+            num = num.add(new BigInteger("1"));
+            numberOfSquareNumbers++;
+        } 
     }
 }
