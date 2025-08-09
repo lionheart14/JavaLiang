@@ -1,13 +1,16 @@
 package excercises.chapter_10;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 import excercises.chapter_10.MyInteger;
 
 public class Exercises {
     public static void main(String[] args) {
-        findSquareNumbers();
+        System.out.println(Arrays.toString(split("a?b?gf#e", "[?#]")));
     }
 
     public static void displayPrimeNumbers() {
@@ -54,4 +57,24 @@ public class Exercises {
         } 
     }
 
+    //10.25
+    public static String[] split(String s, String regex) {
+        StringBuilder temp = new StringBuilder();
+        List<String> result = new ArrayList<>();
+
+        for(char c : s.toCharArray()) {
+            if(regex.contains(String.valueOf(c))) {
+                result.add(temp.toString());
+                result.add(Character.toString(c));
+                temp.setLength(0);
+            } else {
+                temp.append(c);
+            }
+        }
+        if(!temp.isEmpty()) {
+            result.add(temp.toString());
+        }
+
+        return result.toArray(new String[0]);
+    }
 }
