@@ -31,7 +31,7 @@ public class MyStringBuilder1 {
         char[] result = new char[c.length];
         for(int i = 0; i < c.length; i++) {
             if(Character.isAlphabetic(c[i])) {
-                result[i] = Character.toUpperCase(c[i]);
+                result[i] = Character.toLowerCase(c[i]);
             } else {
                 result[i] = c[i];
             }

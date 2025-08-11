@@ -6,7 +6,7 @@ import excercises.chapter_09.Account;
 
 public class TestClass {
     public static void main(String[] args) {
-        myStringBuilder1Test();
+        myStringBuilder2Test();
     }
 
     public static void timeTest() {
@@ -118,5 +118,17 @@ public class TestClass {
         System.out.println(msb2.toString());
     }
 
-    
+    public static void myStringBuilder2Test() {
+        MyStringBuilder2 msb1 = new MyStringBuilder2("test1");
+        System.out.println(msb1.getS());
+
+        MyStringBuilder2 msb2 = msb1.insert(2, new MyStringBuilder2("ficken"));
+        System.out.println(msb2.getS());
+
+        System.out.println(msb2.reverse().getS());
+
+        System.out.println(msb2.substring(5).getS());
+
+        System.out.println(msb2.toUpperCase().getS());
+    }
 }
