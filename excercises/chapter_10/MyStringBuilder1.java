@@ -36,15 +36,22 @@ public class MyStringBuilder1 {
                 result[i] = c[i];
             }
         }
-        return new MyStringBuilder1(result.toString());
+        return new MyStringBuilder1(new String(result));
     }
 
-    // public MyStringBuilder1 substring(int begin, int end) {
-
-    // }
+    public MyStringBuilder1 substring(int begin, int end) {
+        char[] c = s.toCharArray();
+        char[] result = new char[20];
+        int cnt = 0;
+        for(int i = begin; i < end; i++) {
+            result[cnt] = c[i];
+            cnt++;
+        }
+        return new MyStringBuilder1(new String(result));
+    }
 
     @Override
     public String toString() {
-        return super.toString();
+        return s;
     }
 }

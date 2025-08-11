@@ -6,7 +6,7 @@ import excercises.chapter_09.Account;
 
 public class TestClass {
     public static void main(String[] args) {
-        myDateTest();
+        myStringBuilder1Test();
     }
 
     public static void timeTest() {
@@ -111,4 +111,12 @@ public class TestClass {
         MyDate md = new MyDate();
         System.out.println(md);
     }
+
+    public static void myStringBuilder1Test() {
+        MyStringBuilder1 msb1 = new MyStringBuilder1("hurensohn");
+        MyStringBuilder1 msb2 = msb1.substring(0, 5);
+        System.out.println(msb2.toString());
+    }
+
+    
 }

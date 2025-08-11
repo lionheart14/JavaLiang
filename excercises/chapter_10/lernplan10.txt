@@ -1,13 +1,13 @@
 Besonders empfehlenswert
 Diese Aufgaben bringen dir zentrale und sehr praxisnahe Programmierkonzepte bei.
 
-**10.27 & **10.28 (Implement the StringBuilder class): Absolutes Top-Thema. Hier lernst du, wie veränderliche (mutable) Objekte funktionieren, die das genaue Gegenteil von String sind. Das ist fundamental für das Verständnis von Performance und Speicherverwaltung.
-
 **10.22 & **10.23 (Implement the String class): Sehr wichtig. Du baust eine der fundamentalsten Klassen nach. Das lehrt dich die Grundlagen des Klassendesigns, den Umgang mit char-Arrays und das Konzept der Unveränderlichkeit (Immutability).
 
 **10.25 (New string split method): Praxisnah. Das Zerlegen von Strings anhand von Mustern (regulären Ausdrücken) ist eine Standardaufgabe im Programmieralltag.
 
 *10.26 (Calculator): Gute Anwendungsaufgabe. Hier wendest du String-Verarbeitung an, um eine Logik zu implementieren. Das ist eine typische kleine Projektaufgabe.
+
+**10.27 & **10.28 (Implement the StringBuilder class): Absolutes Top-Thema. Hier lernst du, wie veränderliche (mutable) Objekte funktionieren, die das genaue Gegenteil von String sind. Das ist fundamental für das Verständnis von Performance und Speicherverwaltung.
 
 Gute Übung
 Diese Aufgaben sind gut, um spezifische Fähigkeiten zu vertiefen, aber die oberen bringen dir breiter anwendbare Konzepte bei.
