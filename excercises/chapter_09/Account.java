@@ -3,10 +3,10 @@ package excercises.chapter_09;
 import java.util.Date;
 
 public class Account {
-    private int id = 0;
-    private double balance = 0;
-    private double annualInterestRate = 0;
-    private Date dateCreated = new Date();
+    protected int id = 0;
+    protected double balance = 0;
+    protected double annualInterestRate = 0;
+    protected Date dateCreated = new Date();
 
     public Account(int id, double balance) {
         this.id = id;
@@ -63,6 +63,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return String.format("The balance is %f while the monthly interest is %f. Date is %tF", getBalance(), getMonthlyInterest(), getDateCreated())
+        return String.format("The balance is %f while the monthly interest is %f. Date is %tF", getBalance(), getMonthlyInterest(), getDateCreated());
     }
 }
