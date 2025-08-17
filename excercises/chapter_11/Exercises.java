@@ -2,6 +2,7 @@ package excercises.chapter_11;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 import excercises.chapter_10.Circle2D;
 
@@ -40,5 +41,24 @@ public class Exercises {
         list.set(i, list.get((index)));
         list.set(index, temp);
        }
+    }
+
+    public static void fillMatrix() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the array size n: ");
+        int n = input.nextInt();
+        int[][] matrix = new int[n][n];
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                matrix[i][j] = (int) (Math.random() * 2);
+            }
+        }
+
+        ArrayList<Integer> rowCnt = new ArrayList<>();
+        // rowCnt.add(matri)
+
+        System.out.println("The random array is");
+        
     }
 }
