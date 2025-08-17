@@ -1,7 +1,6 @@
 package excercises.chapter_11;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 
 import excercises.chapter_10.Circle2D;
