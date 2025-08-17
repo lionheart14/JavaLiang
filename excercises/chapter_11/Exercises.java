@@ -1,6 +1,7 @@
 package excercises.chapter_11;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 import excercises.chapter_10.Circle2D;
@@ -31,5 +32,14 @@ public class Exercises {
         for (Object object : list) {
             System.out.println(object.toString());
         }
+    }
+
+    public static void shuffle(ArrayList<Integer> list) {
+       for(int i = 0; i < list.size(); i++) {
+        int temp = list.get(i);
+        int index = (int) (Math.random() * list.size());
+        list.set(i, list.get((index)));
+        list.set(index, temp);
+       }
     }
 }
