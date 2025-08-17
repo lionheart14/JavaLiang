@@ -1,15 +1,13 @@
 package excercises.chapter_11;
 
 import java.util.ArrayList;
+import java.util.Date;
+
+import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
-        // numbers.add(4);
-        // numbers.add(10020202);
-        // numbers.add(4123);
-        // numbers.add(41);
-        System.out.println(maximumElementInArrayList(numbers));
+        toStringShuffle();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -22,5 +20,16 @@ public class Exercises {
             }
         }
         return max;
+    }
+
+    public static void toStringShuffle() {
+        ArrayList<Object> list = new ArrayList<Object>();
+        list.add(new Date());
+        list.add(new Circle2D());
+        list.add(new Triangle());
+
+        for (Object object : list) {
+            System.out.println(object.toString());
+        }
     }
 }
