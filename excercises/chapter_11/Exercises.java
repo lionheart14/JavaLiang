@@ -67,5 +67,11 @@ public class Exercises {
         Collections.sort(list);
     }
 
-    
+    public static double sum(ArrayList<Double> list) {
+        double sum = 0;
+        for (Double double1 : list) {
+            sum += double1;
+        }
+        return sum;
+    }
 }
