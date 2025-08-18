@@ -1,6 +1,8 @@
 package excercises.chapter_11;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -60,4 +62,10 @@ public class Exercises {
 
         System.out.println("The random array is");
     }
+
+    public static void sort(ArrayList<Integer> list) {
+        Collections.sort(list);
+    }
+
+    
 }
