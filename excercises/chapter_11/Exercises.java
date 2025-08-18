@@ -59,6 +59,5 @@ public class Exercises {
         // rowCnt.add(matri)
 
         System.out.println("The random array is");
-        
     }
 }
