@@ -12,7 +12,7 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        testToCharacterArray();
+        testBinPacking  ();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -167,5 +167,39 @@ public class Exercises {
         }
     }
 
-    
+    public static void testBinPacking() {
+        Scanner input = new Scanner(System.in);
+        final int CONTAINER_WEIGHT = 10;
+        System.out.print("Enter the number of objects: ");
+        int num = input.nextInt();
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for(int i = 0; i < num; i++) {
+            numbers.add(input.nextInt());
+        }
+
+        int currentSum = 0;
+        int[] currentNumbers = new int[10];
+        int contatinerNumber = 1;
+
+        for (Integer n : numbers) {
+            if(currentSum + n > 10) {
+                System.out.print("Container " + contatinerNumber + " contains objects with weight ");
+                for (int i : currentNumbers) {
+                    System.out.print(i + " ");
+                }
+                currentNumbers = new int[10];
+                currentSum = 0;
+            }
+
+            currentSum += n;
+        }
+
+
+
+        
+    }
+
+
+
 }
