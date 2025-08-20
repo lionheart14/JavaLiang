@@ -3,14 +3,16 @@ package excercises.chapter_11;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Currency;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        toStringShuffle();
+        testRemoveDuplicate();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -73,5 +75,40 @@ public class Exercises {
             sum += double1;
         }
         return sum;
+    }
+
+    public static void removeDuplicate(ArrayList<Integer> list) {
+        final int LIST_SIZE = list.size();
+        for(int i = 0; i < LIST_SIZE; i++) {
+            int CURRENT_ELEMENT = list.get(i);
+            Iterator<Integer> listIterator = list.iterator();
+            for(int j = 0; j < LIST_SIZE; j++) {
+                if(i == j) continue;
+
+                if(CURRENT_ELEMENT == list.get(j)) {
+                    list.set(j, 0);
+                }
+            }
+        }
+
+        for (Integer integer : list) {
+                if(integer == 0) {
+                    list.remove(integer);
+                }
+            }
+    }
+
+    public static void testRemoveDuplicate() {
+        Scanner input = new Scanner(System.in);
+        ArrayList<Integer> list = new ArrayList<>();
+        System.out.print("Enter 10 integers: ");
+        for(int i = 0; i < 10; i++) {
+            list.add(input.nextInt());
+        }
+        removeDuplicate(list);
+        System.out.print("The distinct integers are ");
+        for (Integer num : list) {
+            System.out.print(num + " ");
+        }
     }
 }
