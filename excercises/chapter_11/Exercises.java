@@ -12,7 +12,7 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        testUnion();
+        testToCharacterArray();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -145,4 +145,27 @@ public class Exercises {
             System.out.print(integer + " ");
         }
     }
+
+    //TODO
+    public static void areaOfConvexPolygon() {
+        
+    }
+
+    public static ArrayList<Character> toCharacterArray(String string) {
+        ArrayList<Character> list = new ArrayList<>();
+        for(int i = 0; i < string.length(); i++) {
+            list.add(string.charAt(i));
+        }
+        return list;
+    }
+
+    public static void testToCharacterArray() {
+        ArrayList<Character> result = toCharacterArray("BERSERK");
+        System.out.print("Chracters in string ");
+        for (Character character : result) {
+            System.out.print(character + " ");
+        }
+    }
+
+    
 }
