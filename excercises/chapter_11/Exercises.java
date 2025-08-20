@@ -12,7 +12,7 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        testRemoveDuplicate();
+        testUnion();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -109,6 +109,40 @@ public class Exercises {
         System.out.print("The distinct integers are ");
         for (Integer num : list) {
             System.out.print(num + " ");
+        }
+    }
+
+    public static ArrayList<Integer> union(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+        ArrayList<Integer> list3 = new ArrayList<>();
+        for (Integer integer : list1) {
+            list3.add(integer);
+        }
+
+        for (Integer integer : list2) {
+            list3.add(integer);
+        }
+
+        return list3;
+    }
+
+    public static void testUnion() {
+        Scanner input = new Scanner(System.in);
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        System.out.print("Enter five integers for list1: ");
+        for(int i = 0; i < 5; i++) {
+            list1.add(input.nextInt());
+        }
+        
+        System.out.print("Enter five integers for list2: ");
+        for(int i = 0; i < 5; i++) {
+            list2.add(input.nextInt());
+        }
+
+        ArrayList<Integer> list3 = union(list1, list2);
+        System.out.print("The combined list is ");
+        for (Integer integer : list3) {
+            System.out.print(integer + " ");
         }
     }
 }
