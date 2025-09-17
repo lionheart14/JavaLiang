@@ -12,7 +12,7 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        unionTest();
+        perfectSquare();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -140,5 +140,47 @@ public class Exercises {
         }
 
         return combinedList;
+    }
+    
+    public static void perfectSquare() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter an integer m: ");
+        int m = input.nextInt();
+
+        ArrayList<Integer> factors = new ArrayList<>();
+        int temp = m;
+        int factor = 2;
+        while(temp != 1) {
+            if(temp % factor == 0) {
+                temp = temp / factor;
+                factors.add(factor);
+                factor = 2;
+            } else {
+                factor++;
+            }
+        }
+
+
+
+        int[][] matrix = new int[factors.size()][2];
+        for(int row = 0; row < matrix.length; row++) {
+            for(int column = 0; column < matrix[row].length; column++) {
+                matrix[]
+            }
+        }
+        
+        for(int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if(matrix[0][j] == matrix[0][i]) {
+                    matrix[1][j]++;
+                } else {
+                    
+                }
+            }
+        }
+
+        for (Integer integer : factors) {
+            System.out.print(integer + " ");
+        }
     }
 }
