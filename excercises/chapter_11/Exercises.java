@@ -3,6 +3,7 @@ package excercises.chapter_11;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Currency;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -11,7 +12,11 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
+<<<<<<< HEAD
         removeDuplicateTest();
+=======
+        testUnion();
+>>>>>>> 2b0e4f273b787bc3cab19d4d12760fde7813e695
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
