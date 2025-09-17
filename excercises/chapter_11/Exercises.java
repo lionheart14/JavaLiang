@@ -12,11 +12,7 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-<<<<<<< HEAD
-        removeDuplicateTest();
-=======
-        testUnion();
->>>>>>> 2b0e4f273b787bc3cab19d4d12760fde7813e695
+        unionTest();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -109,5 +105,40 @@ public class Exercises {
                 distinct.add(element);
             }
         }
+    }
+
+    public static void unionTest() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter five integers for list1: ");
+        ArrayList<Integer> list1 = new ArrayList<>();
+        for(int i = 0; i < 5; i++) {
+            list1.add(input.nextInt());
+        }
+        System.out.print("Enter five integers for list2: ");
+        ArrayList<Integer> list2 = new ArrayList<>();
+        for(int i = 0; i < 5; i++) {
+            list2.add(input.nextInt());
+        }
+
+        ArrayList<Integer> combinedList = union(list1, list2);
+        System.out.print("The combined list is ");
+        for (Integer integer : combinedList) {
+            System.out.print(integer + " ");
+        }
+
+    }
+
+    public static ArrayList<Integer> union(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+        ArrayList<Integer> combinedList = new ArrayList<>();
+
+        for(int i = 0; i < list1.size(); i++) {
+            combinedList.add(list1.get(i));
+        }
+
+        for(int i = 0; i < list2.size(); i++) {
+            combinedList.add(list2.get(i));
+        }
+
+        return combinedList;
     }
 }
