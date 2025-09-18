@@ -12,7 +12,7 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        perfectSquare();
+        System.out.println(toCharacterArray("abc"));
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -182,5 +182,13 @@ public class Exercises {
         for (Integer integer : factors) {
             System.out.print(integer + " ");
         }
+    }
+
+    public static ArrayList<Character> toCharacterArray(String s) {
+        ArrayList<Character> array = new ArrayList<>();
+        for(int i = 0; i < s.length(); i++) {
+            array.add(s.charAt(i));
+        }
+        return array;
     }
 }
