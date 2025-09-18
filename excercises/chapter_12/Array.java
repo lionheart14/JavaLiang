@@ -1,5 +1,6 @@
 package excercises.chapter_12;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Array {
@@ -18,7 +19,10 @@ public class Array {
                 continueInput = false;
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("The number has to be between 1 - 12");
-            } 
+            } catch(InputMismatchException e) {
+                System.out.println("Please enter a number");
+                input.nextLine();
+            }
         } while (continueInput);
     }
 }
