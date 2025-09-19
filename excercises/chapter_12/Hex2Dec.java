@@ -33,26 +33,23 @@ public class Hex2Dec {
      */
     public static int hexToDecimal(String hex) {
         int decimalValue = 0;
-        try {
-            // Die Schleife geht durch jeden Buchstaben des Hex-Strings.
-            if(false) {
-                throw new NumberFormatException();
-            }
 
-            for (int i = 0; i < hex.length(); i++) {
-                char hexChar = hex.charAt(i);
-                // Das ist der Kern der Umwandlung:
-                // Der bisherige Wert wird mit 16 multipliziert (die Basis des Hex-Systems)
-                // und der Wert des aktuellen Zeichens wird addiert.
-                decimalValue = decimalValue * 16 + hexCharToDecimal(hexChar);
-            }
-            return decimalValue;
+        try {
+            Long.parseLong(hex);
         } catch (NumberFormatException e) {
             System.out.println("Hex number is not hex");
         }
 
+        for (int i = 0; i < hex.length(); i++) {
+            char hexChar = hex.charAt(i);
+            // Das ist der Kern der Umwandlung:
+            // Der bisherige Wert wird mit 16 multipliziert (die Basis des Hex-Systems)
+            // und der Wert des aktuellen Zeichens wird addiert.
+            decimalValue = decimalValue * 16 + hexCharToDecimal(hexChar);
+        }
+        
         return decimalValue;
-    }
+        }
 
     /**
      * Diese Hilfsmethode wandelt ein einzelnes Hexadezimal-Zeichen
