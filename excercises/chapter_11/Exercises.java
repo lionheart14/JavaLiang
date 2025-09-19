@@ -12,7 +12,7 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        testBinPacking  ();
+        testUnion();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -77,129 +77,110 @@ public class Exercises {
         return sum;
     }
 
-    public static void removeDuplicate(ArrayList<Integer> list) {
-        final int LIST_SIZE = list.size();
-        for(int i = 0; i < LIST_SIZE; i++) {
-            int CURRENT_ELEMENT = list.get(i);
-            Iterator<Integer> listIterator = list.iterator();
-            for(int j = 0; j < LIST_SIZE; j++) {
-                if(i == j) continue;
-
-                if(CURRENT_ELEMENT == list.get(j)) {
-                    list.set(j, 0);
-                }
-            }
-        }
-
-        for (Integer integer : list) {
-                if(integer == 0) {
-                    list.remove(integer);
-                }
-            }
-    }
-
-    public static void testRemoveDuplicate() {
+    public static void removeDuplicateTest() {
         Scanner input = new Scanner(System.in);
-        ArrayList<Integer> list = new ArrayList<>();
         System.out.print("Enter 10 integers: ");
+        ArrayList<Integer> numbers = new ArrayList<>();
         for(int i = 0; i < 10; i++) {
-            list.add(input.nextInt());
+            numbers.add(input.nextInt());
         }
-        removeDuplicate(list);
+
+        removeDuplicate(numbers);
+
         System.out.print("The distinct integers are ");
-        for (Integer num : list) {
-            System.out.print(num + " ");
+        Iterator iterator = numbers.iterator();
+        while(iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
         }
     }
 
-    public static ArrayList<Integer> union(ArrayList<Integer> list1, ArrayList<Integer> list2) {
-        ArrayList<Integer> list3 = new ArrayList<>();
-        for (Integer integer : list1) {
-            list3.add(integer);
+    public static void removeDuplicate(ArrayList<Integer> list) {
+        ArrayList<Integer> distinct = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            int element = list.get(i);
+            if(distinct.contains(element)) {
+                list.remove(i);
+                i--;
+            } else {
+                distinct.add(element);
+            }
         }
-
-        for (Integer integer : list2) {
-            list3.add(integer);
-        }
-
-        return list3;
     }
 
-    public static void testUnion() {
+    public static void unionTest() {
         Scanner input = new Scanner(System.in);
-        ArrayList<Integer> list1 = new ArrayList<>();
-        ArrayList<Integer> list2 = new ArrayList<>();
         System.out.print("Enter five integers for list1: ");
+        ArrayList<Integer> list1 = new ArrayList<>();
         for(int i = 0; i < 5; i++) {
             list1.add(input.nextInt());
         }
-        
         System.out.print("Enter five integers for list2: ");
+        ArrayList<Integer> list2 = new ArrayList<>();
         for(int i = 0; i < 5; i++) {
             list2.add(input.nextInt());
         }
 
-        ArrayList<Integer> list3 = union(list1, list2);
+        ArrayList<Integer> combinedList = union(list1, list2);
         System.out.print("The combined list is ");
-        for (Integer integer : list3) {
+        for (Integer integer : combinedList) {
+            System.out.print(integer + " ");
+        }
+
+    }
+
+    public static ArrayList<Integer> union(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+        ArrayList<Integer> combinedList = new ArrayList<>();
+
+        for(int i = 0; i < list1.size(); i++) {
+            combinedList.add(list1.get(i));
+        }
+
+        for(int i = 0; i < list2.size(); i++) {
+            combinedList.add(list2.get(i));
+        }
+
+        return combinedList;
+    }
+    
+    public static void perfectSquare() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter an integer m: ");
+        int m = input.nextInt();
+
+        ArrayList<Integer> factors = new ArrayList<>();
+        int temp = m;
+        int factor = 2;
+        while(temp != 1) {
+            if(temp % factor == 0) {
+                temp = temp / factor;
+                factors.add(factor);
+                factor = 2;
+            } else {
+                factor++;
+            }
+        }
+
+
+
+        int[][] matrix = new int[factors.size()][2];
+        for(int row = 0; row < matrix.length; row++) {
+            for(int column = 0; column < matrix[row].length; column++) {
+                matrix[]
+            }
+        }
+        
+        for(int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if(matrix[0][j] == matrix[0][i]) {
+                    matrix[1][j]++;
+                } else {
+                    
+                }
+            }
+        }
+
+        for (Integer integer : factors) {
             System.out.print(integer + " ");
         }
     }
-
-    //TODO
-    public static void areaOfConvexPolygon() {
-        
-    }
-
-    public static ArrayList<Character> toCharacterArray(String string) {
-        ArrayList<Character> list = new ArrayList<>();
-        for(int i = 0; i < string.length(); i++) {
-            list.add(string.charAt(i));
-        }
-        return list;
-    }
-
-    public static void testToCharacterArray() {
-        ArrayList<Character> result = toCharacterArray("BERSERK");
-        System.out.print("Chracters in string ");
-        for (Character character : result) {
-            System.out.print(character + " ");
-        }
-    }
-
-    public static void testBinPacking() {
-        Scanner input = new Scanner(System.in);
-        final int CONTAINER_WEIGHT = 10;
-        System.out.print("Enter the number of objects: ");
-        int num = input.nextInt();
-
-        ArrayList<Integer> numbers = new ArrayList<>();
-        for(int i = 0; i < num; i++) {
-            numbers.add(input.nextInt());
-        }
-
-        int currentSum = 0;
-        int[] currentNumbers = new int[10];
-        int contatinerNumber = 1;
-
-        for (Integer n : numbers) {
-            if(currentSum + n > 10) {
-                System.out.print("Container " + contatinerNumber + " contains objects with weight ");
-                for (int i : currentNumbers) {
-                    System.out.print(i + " ");
-                }
-                currentNumbers = new int[10];
-                currentSum = 0;
-            }
-
-            currentSum += n;
-        }
-
-
-
-        
-    }
-
-
-
 }
