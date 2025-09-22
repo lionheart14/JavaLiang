@@ -12,7 +12,7 @@ import excercises.chapter_10.Circle2D;
 
 public class Exercises {
     public static void main(String[] args) {
-        binPacking();
+        testUnion();
     }
 
     public static Integer maximumElementInArrayList(ArrayList<Integer> list) {
@@ -181,49 +181,6 @@ public class Exercises {
 
         for (Integer integer : factors) {
             System.out.print(integer + " ");
-        }
-    }
-
-    public static ArrayList<Character> toCharacterArray(String s) {
-        ArrayList<Character> array = new ArrayList<>();
-        for(int i = 0; i < s.length(); i++) {
-            array.add(s.charAt(i));
-        }
-        return array;
-    }
-
-    public static void binPacking() {
-        final int CONTAINER_SIZE = 10;
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter the number of objects: ");
-        int num = input.nextInt();
-
-        System.out.print("Enter the weights of the objects: ");
-        ArrayList<Integer> objects = new ArrayList<>();
-        for(int i = 0; i < num; i++) {
-            objects.add(input.nextInt());
-        }
-
-        Iterator iterator = objects.iterator();
-        ArrayList<Integer> container = new ArrayList<>();
-        int containerNum = 1;
-        int currentSize = 0;
-        while(iterator.hasNext()) {
-            int element = (int) iterator.next();
-            if(currentSize + element < CONTAINER_SIZE) {
-                currentSize += element;
-                container.add(element);
-            } else {
-                System.out.print("Container " + containerNum + " contains objects with weight ");
-                for (Integer integer : container) {
-                    System.out.print(integer + " ");
-                }
-                container.clear();
-                container.add(element);
-                currentSize = element;
-                containerNum++;
-                System.out.println();
-            }
         }
     }
 }
