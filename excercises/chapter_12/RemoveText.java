@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class RemoveText {
     public static void main(String[] args) {
-        Path eingabePfad = Paths.get("C:\\DevVSC\\JavaLiang\\excercises\\chapter_12\\eingabe.txt");
+        Path eingabePfad = Paths.get("C:\\DevVSC\\JavaLiang\\excercises\\chapter_12\\doc\\eingabe.txt");
         Path ausgabePfad = Paths.get(args[1]);
 
         try {
