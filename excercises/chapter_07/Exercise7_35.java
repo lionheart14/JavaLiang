@@ -17,17 +17,12 @@ public class Exercise7_35 {
         char[] guessedChars = new char[30];
 
         while(!guessed) {
-            if(correctCharCount == word.length()) {
-                guessed = true;
-                break;
-            }
             correctCharCount = 0;
 
             System.out.print("(Guess) Enter a leter in word " );
             for(int i = 0; i < word.length(); i++) {
                 boolean charFound = false;
                 for(int j = 0; j < guessedChars.length; j++) {
-
                     if(word.charAt(i) == guessedChars[j]) {
                         System.out.print(word.charAt(i));
                         charFound = true;
@@ -45,7 +40,7 @@ public class Exercise7_35 {
                 guessed = true;
                 break;
             }
-            
+
             System.out.print(" > ");
 
             try {
@@ -65,6 +60,6 @@ public class Exercise7_35 {
                 System.out.println("Enter a character");
             }
         }
-        System.out.println("The word is " + word + ". " + "You missed " + missCount + " times");
+        System.out.println("\nThe word is " + word + ". " + "You missed " + missCount + " times");
     }
 }
