@@ -20,12 +20,20 @@ public class Exercise12_19 {
         Path books = Paths.get("C:\\DevVSC\\JavaLiang\\excercises\\chapter_12\\doc\\Books.txt");
         
         try {
-            List<String> allAuthors = Files.readAllLines(authors);
-            List<String> allBooks = Files.readAllLines(books);
+            Exercise12_15.writeInFile(author, authors.toFile());
 
-            writeInFile(author, allAuthors);
+            List<String> allAuthors = Files.readAllLines(authors);
+            int lineNumber = -1;
+            for(int i = 0; i < allAuthors.size(); i++) {
+                if(author.equals( allAuthors.get(i))) {
+                    lineNumber = i;
+                    break;
+                }
+            }
+            Exercise12_15.writeInFile(lineNumber +" "+ title, books.toFile());
         } catch (IOException e) {
-            // TODO: handle exception
+            System.out.println("Error reading file");
+            e.printStackTrace();
         }
     }
 }
