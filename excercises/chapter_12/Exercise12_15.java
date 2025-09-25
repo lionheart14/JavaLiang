@@ -17,7 +17,8 @@ public class Exercise12_15 {
             List<String> allLines = Files.readAllLines(filePath); 
 
             int insertionIndex = 0;
-            boolean inserted= false;
+            boolean inserted= false; 
+
             for(int i = 0; i < allLines.size(); i++) {
                 if(name.compareToIgnoreCase(allLines.get(i)) < 0) {
                     insertionIndex = i;
@@ -26,11 +27,12 @@ public class Exercise12_15 {
                     break;
                 }
 
-                if(!inserted) {
-                    allLines.add(name);
-                }
             }
-
+            
+            if(!inserted) {
+                allLines.add(name);
+            }
+            
             Files.write(filePath, allLines);
         } catch (IOException e) {
             System.out.println("Error reading file");
