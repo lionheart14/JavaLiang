@@ -3,9 +3,9 @@ package excercises.chapter_11;
 import java.util.Date;
 
 public class GeometricObject {
-    private String color = "white";
-    private boolean filled;
-    private Date dateCreated;
+    protected String color = "white";
+    protected boolean isFilled;
+    protected Date dateCreated;
 
     /** Konstruktor für ein Standard-GeometricObject */
     public GeometricObject() {
@@ -13,10 +13,10 @@ public class GeometricObject {
     }
 
     /** Konstruktor für ein GeometricObject mit spezifischer Farbe und Füllung */
-    public GeometricObject(String color, boolean filled) {
+    public GeometricObject(String color, boolean isFilled) {
         this.dateCreated = new Date();
         this.color = color;
-        this.filled = filled;
+        this.isFilled = isFilled;
     }
 
     /** Gibt die Farbe zurück */
@@ -31,12 +31,12 @@ public class GeometricObject {
 
     /** Gibt den Füllstatus zurück (true/false) */
     public boolean isFilled() {
-        return filled;
+        return isFilled;
     }
 
     /** Setzt einen neuen Füllstatus */
-    public void setFilled(boolean filled) {
-        this.filled = filled;
+    public void setFilled(boolean isFilled) {
+        this.isFiled = isFilled;
     }
 
     /** Gibt das Erstellungsdatum zurück */
@@ -48,6 +48,6 @@ public class GeometricObject {
     @Override
     public String toString() {
         return "erstellt am " + dateCreated + "\nFarbe: " + color +
-               " und gefüllt: " + filled;
+               " und gefüllt: " + isFilled;
     }
 }
