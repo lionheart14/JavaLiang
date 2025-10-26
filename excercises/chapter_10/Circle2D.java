@@ -1,6 +1,8 @@
 package excercises.chapter_10;
 
-public class Circle2D {
+import excercises.chapter_11.GeometricObject;
+
+public class Circle2D extends GeometricObject{
     private double x;
     private double y;
     private double radius;
