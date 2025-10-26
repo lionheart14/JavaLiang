@@ -2,7 +2,9 @@ package excercises.chapter_11;
 
 import java.util.Date;
 
-public class GeometricObject {
+import excercises.chapter_13.Triangle;
+
+public abstract class GeometricObject implements Comparable<GeometricObject>{
     protected String color = "white";
     protected boolean isFilled;
     protected Date dateCreated;
@@ -24,6 +26,8 @@ public class GeometricObject {
         return color;
     }
 
+    public abstract double getArea();
+
     /** Setzt eine neue Farbe */
     public void setColor(String color) {
         this.color = color;
@@ -36,7 +40,7 @@ public class GeometricObject {
 
     /** Setzt einen neuen Füllstatus */
     public void setFilled(boolean isFilled) {
-        this.isFiled = isFilled;
+        this.isFilled = isFilled;
     }
 
     /** Gibt das Erstellungsdatum zurück */
@@ -49,5 +53,10 @@ public class GeometricObject {
     public String toString() {
         return "erstellt am " + dateCreated + "\nFarbe: " + color +
                " und gefüllt: " + isFilled;
+    }
+
+    @Override
+    public int compareTo(GeometricObject o) {
+       return Double.compare(this.getArea(), o.getArea());
     }
 }
