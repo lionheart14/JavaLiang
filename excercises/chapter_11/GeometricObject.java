@@ -2,8 +2,6 @@ package excercises.chapter_11;
 
 import java.util.Date;
 
-import excercises.chapter_13.Triangle;
-
 public abstract class GeometricObject{
     protected String color = "white";
     protected boolean isFilled;
@@ -53,10 +51,5 @@ public abstract class GeometricObject{
     public String toString() {
         return "erstellt am " + dateCreated + "\nFarbe: " + color +
                " und gefüllt: " + isFilled;
-    }
-
-    @Override
-    public int compareTo(GeometricObject o) {
-       return Double.compare(this.getArea(), o.getArea());
     }
 }
