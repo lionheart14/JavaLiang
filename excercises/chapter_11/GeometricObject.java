@@ -4,7 +4,7 @@ import java.util.Date;
 
 import excercises.chapter_13.Triangle;
 
-public abstract class GeometricObject implements Comparable<GeometricObject>{
+public abstract class GeometricObject{
     protected String color = "white";
     protected boolean isFilled;
     protected Date dateCreated;
