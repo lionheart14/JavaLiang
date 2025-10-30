@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "MyJavaFX",
+            "request": "launch",
+            "mainClass": "excercises.chapter_14.MyJavaFX",
+            "projectName": "JavaLiang_5a726155",
+        }
+    ]
+}
