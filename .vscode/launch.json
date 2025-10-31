@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Exercise14_01",
+            "request": "launch",
+            "mainClass": "excercises.chapter_14.Exercise14_01",
+            "projectName": "JavaLiang_5a726155"
+        },
+        {
+            "type": "java",
             "name": "ButtonInPane",
             "request": "launch",
             "mainClass": "excercises.chapter_14.ButtonInPane",
