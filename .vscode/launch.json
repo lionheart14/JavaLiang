@@ -3,10 +3,24 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ButtonInPane",
+            "request": "launch",
+            "mainClass": "excercises.chapter_14.ButtonInPane",
+            "projectName": "JavaLiang_5a726155"
+        },
+        {
+            "type": "java",
+            "name": "MultipleStageDemo",
+            "request": "launch",
+            "mainClass": "excercises.chapter_14.MultipleStageDemo",
+            "projectName": "JavaLiang_5a726155"
+        },
+        {
+            "type": "java",
             "name": "MyJavaFX",
             "request": "launch",
             "mainClass": "excercises.chapter_14.MyJavaFX",
-            "projectName": "JavaLiang_5a726155",
+            "projectName": "JavaLiang_5a726155"
         }
     ]
 }
