@@ -11,6 +11,7 @@ public class MyJavaFX extends Application {
         // Create a scene and place a button in the scene
         Button btOK = new Button("OK");
         Scene scene = new Scene(btOK, 200, 250);
+        
         primaryStage.setTitle("MyJavaFX"); // Set the stage title
         primaryStage.setScene(scene); // Place the scene in the stage
         primaryStage.show(); // Display the stage
