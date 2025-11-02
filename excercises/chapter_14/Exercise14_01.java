@@ -20,7 +20,20 @@ public class Exercise14_01 extends Application{
         Image imageYes = new Image("file:C:\\DevVSC\\JavaLiang\\excercises\\chapter_14\\resources\\yes.png");
 
         for(int i = 0; i < 9; i++) {
-            ImageView view = new ImageView(imageNo);
+            int num = (int) (Math.random() * 3);
+            ImageView view;
+            switch (num) {
+                case 1:
+                    view = new ImageView(imageNo);
+                    break;
+                case 2:
+                    view = new ImageView(imageYes);
+                    break;
+                case 3:
+                    view = new ImageView();
+                    break;
+                default: view = new ImageView();
+            }
 
             view.setFitWidth(100);
             view.setFitHeight(100);
