@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Exercise14_04",
+            "request": "launch",
+            "mainClass": "excercises.chapter_14.Exercise14_04",
+            "projectName": "JavaLiang_5a726155"
+        },
+        {
+            "type": "java",
             "name": "Exercise14_03",
             "request": "launch",
             "mainClass": "excercises.chapter_14.Exercise14_03",

@@ -22,6 +22,7 @@ public class Exercise14_03 extends Application{
 
         Collections.shuffle(list);
 
+        //PANE LOGIK
         HBox pane = new HBox();
 
         for(int i = 0; i < 3; i++) {
@@ -33,7 +34,9 @@ public class Exercise14_03 extends Application{
             bildDarstellung.setFitWidth(100);
             pane.getChildren().add(bildDarstellung);
         }
-        Scene scene = new Scene(pane, 800, 400);
+
+        //SCENE LOGIK
+        Scene scene = new Scene(pane);
 
         arg0.setTitle("14.3");
         arg0.setScene(scene);
