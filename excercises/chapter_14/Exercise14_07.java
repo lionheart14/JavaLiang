@@ -1,6 +1,7 @@
 package excercises.chapter_14;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -21,6 +22,7 @@ public class Exercise14_07 extends Application{
                 TextField text = new TextField(num);
                 text.setPrefWidth(30);
                 text.setPrefHeight(30);
+                text.setAlignment(Pos.CENTER);
 
                 pane.add(text, i, j);
             }
