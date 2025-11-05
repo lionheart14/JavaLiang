@@ -3,80 +3,17 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Exercise14_11",
+            "name": "exercise1",
             "request": "launch",
-            "mainClass": "excercises.chapter_14.Exercise14_11",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "Exercise14_10",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.Exercise14_10",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "Exercise14_07",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.Exercise14_07",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "Exercise14_06",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.Exercise14_06",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "Exercise14_05",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.Exercise14_05",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "Exercise14_04",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.Exercise14_04",
-            "projectName": "JavaLiang_5a726155"
+            "mainClass": "excercises.chapter_15.gemini.exercise1",
+            "projectName": "JavaLiang_ff84f4c9"
         },
         {
             "type": "java",
             "name": "Exercise14_03",
             "request": "launch",
             "mainClass": "excercises.chapter_14.Exercise14_03",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "Exercise14_01",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.Exercise14_01",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "ButtonInPane",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.ButtonInPane",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "MultipleStageDemo",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.MultipleStageDemo",
-            "projectName": "JavaLiang_5a726155"
-        },
-        {
-            "type": "java",
-            "name": "MyJavaFX",
-            "request": "launch",
-            "mainClass": "excercises.chapter_14.MyJavaFX",
-            "projectName": "JavaLiang_5a726155"
+            "projectName": "JavaLiang_ff84f4c9"
         }
     ]
 }
