@@ -23,9 +23,7 @@ public class Exercise14_11 extends Application{
         eye1.setFill(Color.WHITE);
         eye1.setStroke(Color.BLACK);
 
-
         pane.getChildren().addAll(face, eye1);
-
 
         Scene scene = new Scene(pane);
 

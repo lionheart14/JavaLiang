@@ -29,7 +29,15 @@ public class exercise1 extends Application{
         btOK.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent arg0) {
-                System.out.println("Ok!");
+                System.out.println("Ok gecklickt");
+            }
+            
+        });
+        
+        btCancel.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent arg0) {
+                System.out.println("Abbrechen gecklickt");
             }
             
         });
