@@ -40,9 +40,11 @@ public class Exercise6_LayoutPuzzle extends Application {
         // 3. Füge die Elemente dem Grid hinzu
         //    (Wie fügt man Elemente an bestimmten Gitter-Positionen hinzu?)
         //    Tipp: grid.add(node, spalte, zeile);
-        
-        
-        
+        grid.add(userLabel, 0, 1);
+        grid.add(userField, 0, 2);
+        grid.add(passLabel, 1, 1);
+        grid.add(passField, 1, 2);
+    
         // ######################################################
         // DEIN CODE HIER: TEIL 2 - Die HBox (Unten)
         // ######################################################
@@ -50,13 +52,13 @@ public class Exercise6_LayoutPuzzle extends Application {
         // 1. Erstelle die HBox
         HBox buttonPane = new HBox(10); // 10px Abstand
         // (Wie richtest du den *Inhalt* der HBox rechtsbündig aus?)
-        
+        buttonPane.setAlignment(Pos.CENTER_RIGHT);
         // 2. Erstelle die Buttons
         Button btSave = new Button("Speichern");
         Button btCancel = new Button("Abbrechen");
         
         // 3. Füge die Buttons der HBox hinzu
-        
+        buttonPane.getChildren().addAll(btSave, btCancel);
         
 
         // ######################################################
@@ -64,14 +66,20 @@ public class Exercise6_LayoutPuzzle extends Application {
         // ######################################################
         
         // 1. Setze das 'grid' in den Zentrum-Bereich der 'root' (BorderPane)
-        
+        root.setCenter(grid);
         // 2. Setze die 'buttonPane' in den Bottom-Bereich der 'root' (BorderPane)
-
+        root.setBottom(buttonPane);
 
         // 4. Scene und Stage
         Scene scene = new Scene(root, 400, 150);
         primaryStage.setTitle("Übung 6: Layout-Puzzle");
         primaryStage.setScene(scene);
         primaryStage.show();
+ 
+ 
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
     }
 }
