@@ -33,7 +33,7 @@ public class Exercise15_05 extends Application{
         Label timeLabel = new Label("Time: ");
         TextField timeField = new TextField();
 
-        Label finalVelocity;
+        Label finVelLabel = new Label("Final Velocity: ");
 
         pane.add(velocityLabel, 1, 1);
         pane.add(velocityField, 1, 2);
@@ -41,6 +41,7 @@ public class Exercise15_05 extends Application{
         pane.add(accField, 2, 2);
         pane.add(timeLabel, 3, 1);
         pane.add(timeField, 3, 2);
+        pane.add(finVelLabel, 1, 3);
 
         HBox buttonPane = new HBox();
         Button compute = new Button("Compute");
@@ -50,7 +51,9 @@ public class Exercise15_05 extends Application{
         compute.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent arg0) {
-                finalVelocity = new Label("")
+                Double value = Double.parseDouble(velocityField.getText()) + Double.parseDouble(accField.getText()) * Double.parseDouble(timeField.getText());
+                Label finalVelocity = new Label(String.valueOf(value));
+                pane.add(finalVelocity, 2, 3);
             }
             
         });
