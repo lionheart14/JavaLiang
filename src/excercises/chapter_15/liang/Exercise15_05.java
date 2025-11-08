@@ -55,7 +55,7 @@ public class Exercise15_05 extends Application{
                 Label finalVelocity = new Label(String.valueOf(value));
                 pane.add(finalVelocity, 2, 3);
             }
-            
+
         });
 
 
