@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -23,12 +24,23 @@ public class Exercise15_15 extends Application{
         mainPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent arg0) {
-                double x = arg0.getX();
-                double y = arg0.getY();
+                if(arg0.getButton() == MouseButton.PRIMARY) {
+                    double x = arg0.getX();
+                    double y = arg0.getY();
+    
+                    Circle circle = new Circle(x, y, 10, Color.BLACK);
+    
+                    mainPane.getChildren().add(circle);
+                } else if(arg0.getButton() == MouseButton.SECONDARY) {
+                    double x = arg0.getX();
+                    double y = arg0.getY();
 
-                Circle circle = new Circle(x, y, 10, Color.BLACK);
-
-                mainPane.getChildren().add(circle);
+                    for(int i = 0; i < mainPane.getChildren().size(); i++) {
+                        if(mainPane.getChildren().get(i).contains(x, y)) {
+                            mainPane.getChildren().remove(i);
+                        }
+                    }
+                }
             }            
         });
 
