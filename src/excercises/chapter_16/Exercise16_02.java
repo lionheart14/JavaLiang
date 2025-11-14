@@ -54,7 +54,7 @@ public class Exercise16_02 extends Application{
                     if(fillButton.isSelected()) {
                         ellipse.setFill(Color.BLACK);
                     } else {
-                        ellipse.setStroke(Color.TRANSPARENT);
+                        ellipse.setFill(Color.TRANSPARENT);
                     }
 
                     pane.getChildren().add(ellipse);
@@ -66,7 +66,7 @@ public class Exercise16_02 extends Application{
                     if(fillButton.isSelected()) {
                         square.setFill(Color.BLACK);
                     } else {
-                        square.setStroke(Color.TRANSPARENT);
+                        square.setFill(Color.TRANSPARENT);
                     }
 
                     square.setStroke(Color.BLACK); 
@@ -79,7 +79,7 @@ public class Exercise16_02 extends Application{
                     if(fillButton.isSelected()) {
                         circle.setFill(Color.BLACK);
                     } else {
-                        circle.setStroke(Color.TRANSPARENT);
+                        circle.setFill(Color.TRANSPARENT);
                     }
 
                     circle.setStroke(Color.BLACK); 
@@ -92,10 +92,10 @@ public class Exercise16_02 extends Application{
 
         fillButton.setOnAction(e -> {
             if(fillButton.isSelected()) {
-                currentShape.setFill(Color.TRANSPARENT);
+                currentShape.setFill(Color.BLACK);
                 currentShape.setStroke(Color.BLACK); 
             } else {
-                currentShape.setFill(Color.BLACK);
+                currentShape.setFill(Color.TRANSPARENT);
                 currentShape.setStroke(Color.BLACK); 
             }
         });
@@ -103,8 +103,8 @@ public class Exercise16_02 extends Application{
 
         //Anordnen in Pane
         buttonPane.setAlignment(Pos.BOTTOM_CENTER);
-        pane.getChildren().add(buttonPane);
-        Scene scene = new Scene(pane, 500, 500);
+        pane.getChildren().add(buttonPane, 500, 500);
+        Scene scene = new Scene(pane);
 
         arg0.setTitle("16.02");
         arg0.setScene(scene);
