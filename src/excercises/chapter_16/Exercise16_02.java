@@ -103,8 +103,8 @@ public class Exercise16_02 extends Application{
 
         //Anordnen in Pane
         buttonPane.setAlignment(Pos.BOTTOM_CENTER);
-        pane.getChildren().add(buttonPane, 500, 500);
-        Scene scene = new Scene(pane);
+        pane.getChildren().add(buttonPane);
+        Scene scene = new Scene(pane, 500, 500);
 
         arg0.setTitle("16.02");
         arg0.setScene(scene);
